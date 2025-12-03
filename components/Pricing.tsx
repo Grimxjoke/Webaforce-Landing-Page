@@ -5,7 +5,7 @@ import { PricingTier } from '../types';
 const tiers: PricingTier[] = [
   {
     name: 'Essentiel',
-    price: 300,
+    price: 297,
     description: "L'étincelle pour réactiver votre trésorerie dormante.",
     features: [
       'Réactivation de Base Client (Email/SMS)',
@@ -18,7 +18,7 @@ const tiers: PricingTier[] = [
   },
   {
     name: 'Croissance',
-    price: 500,
+    price: 497,
     description: "L'automatisation totale pour ne plus jamais perdre un prospect.",
     features: [
       'Tout du pack Essentiel',

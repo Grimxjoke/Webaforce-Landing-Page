@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap } from 'lucide-react';
+import { Zap, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -10,11 +10,21 @@ const Footer: React.FC = () => {
           <span className="text-xl font-bold text-slate-900 dark:text-white">WEBAFORCE</span>
         </div>
         
-        <div className="flex space-x-6">
-          <a href="#" className="text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-white transition-colors">
+        <div className="flex space-x-6 items-center">
+          <a href="#" aria-label="LinkedIn" className="text-slate-400 hover:text-brand-600 dark:hover:text-white transition-colors">
+            <Linkedin className="h-5 w-5" />
+          </a>
+           <a href="#" aria-label="Twitter" className="text-slate-400 hover:text-brand-600 dark:hover:text-white transition-colors">
+            <Twitter className="h-5 w-5" />
+          </a>
+           <a href="#" aria-label="Facebook" className="text-slate-400 hover:text-brand-600 dark:hover:text-white transition-colors">
+            <Facebook className="h-5 w-5" />
+          </a>
+          <div className="h-4 w-px bg-slate-300 dark:bg-slate-700 mx-2"></div>
+          <a href="#" className="text-sm text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-white transition-colors">
             Mentions Légales
           </a>
-          <a href="#" className="text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-white transition-colors">
+          <a href="#" className="text-sm text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-white transition-colors">
             Politique de confidentialité
           </a>
         </div>

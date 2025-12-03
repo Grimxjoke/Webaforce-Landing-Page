@@ -10,6 +10,7 @@ const Contact: React.FC = () => {
   });
   const [errors, setErrors] = useState<{ phone?: string; email?: string }>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const currentYear = new Date().getFullYear();
 
   // Regex pour valider un email standard
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -62,7 +63,9 @@ const Contact: React.FC = () => {
             {/* Background Image Overlay */}
             <div className="absolute inset-0 z-0">
                 <img 
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" 
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+                    srcSet="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800 800w"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
                     alt="Connexion Mondiale" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay"
                     loading="lazy"
@@ -100,7 +103,7 @@ const Contact: React.FC = () => {
             
             <div className="relative z-10 mt-12">
               <p className="text-sm text-brand-200 opacity-60">
-                © 2024 WEBAFORCE. Innovation Française.
+                © {currentYear} WEBAFORCE. Innovation Française.
               </p>
             </div>
           </div>

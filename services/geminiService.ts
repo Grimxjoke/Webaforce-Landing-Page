@@ -17,7 +17,7 @@ export const sendMessageToGemini = async (message: string): Promise<string> => {
 
       // Logique de réponse simulée (Mock Intelligence)
       if (lowerMsg.includes('prix') || lowerMsg.includes('tarif') || lowerMsg.includes('coût') || lowerMsg.includes('combien')) {
-        response = "Nos offres débutent à 300€/mois pour le pack Essentiel. Le pack Croissance (recommandé) est à 500€/mois et inclut l'IA conversationnelle complète. Souhaitez-vous un audit gratuit de vos besoins ?";
+        response = "Nos offres débutent à 297€/mois pour le pack Essentiel. Le pack Croissance (recommandé) est à 497€/mois et inclut l'IA conversationnelle complète. Souhaitez-vous un audit gratuit de vos besoins ?";
       } else if (lowerMsg.includes('vocal') || lowerMsg.includes('téléphone') || lowerMsg.includes('appel')) {
         response = "Notre Agent Vocal est capable de répondre au téléphone 24/7, de qualifier vos prospects et de prendre des rendez-vous directement dans votre agenda. Vous pouvez le tester en appelant le +33 1 23 45 67 89.";
       } else if (lowerMsg.includes('rdv') || lowerMsg.includes('rendez-vous') || lowerMsg.includes('dispo')) {

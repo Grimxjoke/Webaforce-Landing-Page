@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowRight, CheckCircle2, Play } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="relative pt-24 pb-16 sm:pt-32 overflow-hidden transition-colors duration-300">
       {/* Background Effects */}
@@ -15,7 +17,7 @@ const Hero: React.FC = () => {
         <div className="text-center md:text-left md:w-1/2 pt-10">
           <div className="inline-flex items-center px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-semibold tracking-wide uppercase mb-6">
             <span className="flex h-2 w-2 rounded-full bg-brand-500 dark:bg-brand-400 mr-2 animate-pulse"></span>
-            Nouvelle technologie 2024
+            Nouvelle technologie {currentYear}
           </div>
           <h1 className="text-4xl tracking-tight font-extrabold text-slate-900 dark:text-white sm:text-5xl md:text-6xl leading-tight transition-colors duration-300">
             <span className="block">Dominez votre marché par</span>
@@ -72,6 +74,8 @@ const Hero: React.FC = () => {
               
               <img 
                 src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000" 
+                srcSet="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=600 600w, https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000 1000w"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt="Intelligence Artificielle WEBAFORCE" 
                 className="w-full h-auto object-cover min-h-[400px]"
                 width="1000"
