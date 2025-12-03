@@ -40,9 +40,9 @@ const Hero: React.FC = () => {
             <div className="mt-3 sm:mt-0">
               <a
                 href="#demo"
-                className="w-full flex items-center justify-center px-8 py-3 border border-slate-700 text-base font-medium rounded-md text-brand-400 bg-slate-900/50 hover:bg-slate-800 md:py-4 md:text-lg transition-colors backdrop-blur-sm"
+                className="w-full flex items-center justify-center px-8 py-3 border border-brand-500/30 text-base font-medium rounded-md text-brand-400 bg-slate-900/50 hover:bg-slate-800 hover:border-brand-500/60 md:py-4 md:text-lg transition-all backdrop-blur-sm group"
               >
-                <Play className="ml-2 h-4 w-4 mr-2 fill-current" />
+                <Play className="ml-2 h-4 w-4 mr-2 fill-current group-hover:text-brand-300 transition-colors" />
                 Voir la démo
               </a>
             </div>
