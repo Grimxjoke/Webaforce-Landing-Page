@@ -1,5 +1,3 @@
-import { ChatMessage } from '../types';
-
 // Ce service simule une intelligence artificielle pour la démo frontend
 // sans nécessiter de clé API ni de backend.
 

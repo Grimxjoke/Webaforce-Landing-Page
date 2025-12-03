@@ -65,6 +65,7 @@ const Contact: React.FC = () => {
                     src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" 
                     alt="Connexion Mondiale" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+                    loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-brand-900/90 to-slate-900/90 mix-blend-multiply"></div>
             </div>

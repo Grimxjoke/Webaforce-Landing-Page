@@ -1,13 +1,15 @@
-import React from 'react';
+import { Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
-import Pricing from './components/Pricing';
-import AIDemo from './components/AIDemo';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import FAQ from './components/FAQ';
-import Testimonials from './components/Testimonials';
+
+// Lazy load components that are below the fold to reduce initial bundle size
+const Services = lazy(() => import('./components/Services'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const AIDemo = lazy(() => import('./components/AIDemo'));
+const Pricing = lazy(() => import('./components/Pricing'));
+const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   return (
@@ -15,12 +17,18 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Services />
-        <Testimonials />
-        <FAQ />
-        <AIDemo />
-        <Pricing />
-        <Contact />
+        <Suspense fallback={
+          <div className="py-20 flex justify-center items-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-brand-500 border-t-transparent"></div>
+          </div>
+        }>
+          <Services />
+          <Testimonials />
+          <FAQ />
+          <AIDemo />
+          <Pricing />
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
     </div>
