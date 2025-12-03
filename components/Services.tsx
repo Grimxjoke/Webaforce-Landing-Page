@@ -5,32 +5,32 @@ import { ServiceFeature } from '../types';
 const features: ServiceFeature[] = [
   {
     title: "Réactivation de Base Client",
-    description: "Ne laissez plus dormir vos fichiers clients. Nous réactivons automatiquement vos anciens contacts par SMS et Email pour générer des ventes immédiates sans coût publicitaire additionnel.",
+    description: "Vos anciens clients sont votre plus grande richesse inexploitée. Notre système identifie, segmente et recontacte automatiquement vos listes inactives via des campagnes SMS et Email hyper-personnalisées. Résultat : des ventes immédiates sans dépenser un centime en publicité.",
     icon: RefreshCw
   },
   {
     title: "Agent IA Conversationnel",
-    description: "Un expert virtuel disponible 24/7 sur votre site. Il répond aux questions, qualifie les visiteurs et sécurise les coordonnées de vos futurs clients automatiquement.",
+    description: "Installez un commercial expert sur votre site web. Disponible 24h/24 et 7j/7, notre chatbot intelligent qualifie chaque visiteur, répond aux objections en temps réel et capture les coordonnées des prospects chauds directement dans votre CRM.",
     icon: MessageSquare
   },
   {
     title: "Relance SMS sur Appel Manqué",
-    description: "62% des appels aux PME restent sans réponse. Notre système détecte l'appel manqué et engage immédiatement la conversation par SMS pour ne jamais perdre une opportunité.",
+    description: "62% des appels aux PME restent sans réponse, ce qui équivaut à une perte massive de chiffre d'affaires. Notre technologie 'Missed-Call Text-Back' détecte instantanément l'appel manqué et engage la conversation par SMS pour sécuriser le client avant qu'il n'appelle votre concurrent.",
     icon: Smartphone
   },
   {
     title: "Prise de RDV Autonome",
-    description: "Libérez votre standard. L'IA gère votre agenda, propose les créneaux libres, envoie les confirmations et réduit drastiquement le taux d'absentéisme (No-Show).",
+    description: "Éliminez les allers-retours interminables pour fixer une date. L'IA gère votre agenda, propose les créneaux libres, envoie les confirmations et les rappels automatiques, réduisant drastiquement le taux d'absentéisme (No-Show) à vos rendez-vous.",
     icon: CalendarClock
   },
   {
-    title: "Centralisation des Canaux",
-    description: "Facebook, Instagram, Google Business, SMS, Email : pilotez toutes vos conversations clients depuis un tableau de bord unique et performant.",
+    title: "Centralisation Omnicanale",
+    description: "Ne jonglez plus entre les onglets. Facebook Messenger, Instagram DM, Google Business Profile, SMS, et Email sont désormais centralisés. Pilotez toutes vos conversations clients depuis un tableau de bord unique, intuitif et performant pour une réactivité maximale.",
     icon: Share2
   },
   {
     title: "Croissance Prédictible",
-    description: "Arrêtez de deviner. Nos systèmes sont conçus pour apporter un flux constant, mesurable et évolutif de nouveaux prospects qualifiés chaque mois.",
+    description: "Passez de l'incertitude à la prévisibilité. Nos systèmes d'automatisation sont conçus pour générer un flux constant et mesurable de nouveaux prospects qualifiés chaque mois, vous permettant de planifier votre croissance financière avec sérénité.",
     icon: TrendingUp
   }
 ];
@@ -45,7 +45,7 @@ const Services: React.FC = () => {
             Une suite technologique pour dominer votre secteur
           </p>
           <p className="mt-4 max-w-2xl text-xl text-slate-600 dark:text-slate-400 mx-auto transition-colors duration-300">
-            Nous ne vendons pas de simples outils, nous vendons de la performance automatisée.
+            L'automatisation n'est plus une option, c'est une nécessité. Découvrez comment nos solutions transforment vos processus manuels en machines à générer du profit.
           </p>
         </div>
 

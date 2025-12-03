@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 
 // Lazy load components that are below the fold to reduce initial bundle size
 const Services = lazy(() => import('./components/Services'));
+const ROICalculator = lazy(() => import('./components/ROICalculator'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const AIDemo = lazy(() => import('./components/AIDemo'));
@@ -50,6 +51,7 @@ function App() {
           </div>
         }>
           <Services />
+          <ROICalculator />
           <Testimonials />
           <FAQ />
           <AIDemo />

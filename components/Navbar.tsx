@@ -11,6 +11,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
 
   const navLinks = [
     { name: 'Services', href: '#services' },
+    { name: 'Simulateur', href: '#roi-calculator' },
     { name: 'Témoignages', href: '#testimonials' },
     { name: 'Démo IA', href: '#demo' },
     { name: 'Tarifs', href: '#pricing' },

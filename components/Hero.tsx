@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <p className="mt-6 max-w-md mx-auto md:mx-0 text-base text-slate-600 dark:text-slate-400 sm:text-lg md:mt-5 md:text-xl leading-relaxed transition-colors duration-300">
-            <strong>WEBAFORCE</strong> transforme votre acquisition client. De la <strong>réactivation de base client</strong> à la gestion multicanale, nous déployons les systèmes qui génèrent du profit pendant que vous dormez.
+            <strong>WEBAFORCE</strong> est l'agence leader en solutions d'intelligence artificielle pour PME. Nous transformons radicalement votre acquisition client : de la <strong>réactivation de base de données</strong> à la gestion multicanale centralisée. Déployez des systèmes qui travaillent 24/7 et génèrent du profit pendant que vous dormez.
           </p>
           
           <div className="mt-8 sm:flex sm:justify-center md:justify-start gap-4">
