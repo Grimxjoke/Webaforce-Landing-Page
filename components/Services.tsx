@@ -37,14 +37,14 @@ const features: ServiceFeature[] = [
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-20 bg-slate-950 scroll-mt-20">
+    <section id="services" className="py-20 bg-slate-50 dark:bg-slate-950 scroll-mt-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base text-brand-400 font-semibold tracking-wide uppercase">L'Arsenal WEBAFORCE</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-base text-brand-600 dark:text-brand-400 font-semibold tracking-wide uppercase">L'Arsenal WEBAFORCE</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl transition-colors duration-300">
             Une suite technologique pour dominer votre secteur
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-slate-400 mx-auto">
+          <p className="mt-4 max-w-2xl text-xl text-slate-600 dark:text-slate-400 mx-auto transition-colors duration-300">
             Nous ne vendons pas de simples outils, nous vendons de la performance automatisée.
           </p>
         </div>
@@ -53,15 +53,15 @@ const Services: React.FC = () => {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <div key={index} className="pt-6 group">
-                <div className="flow-root bg-slate-900 rounded-lg px-6 pb-8 h-full border border-slate-800 transition-all duration-300 ease-out transform group-hover:scale-[1.03] group-hover:border-brand-500 group-hover:shadow-[0_10px_40px_-10px_rgba(14,165,233,0.2)]">
+                <div className="flow-root bg-white dark:bg-slate-900 rounded-lg px-6 pb-8 h-full border border-slate-200 dark:border-slate-800 transition-all duration-300 ease-out transform group-hover:scale-[1.03] group-hover:border-brand-500 group-hover:shadow-[0_10px_40px_-10px_rgba(14,165,233,0.15)] dark:group-hover:shadow-[0_10px_40px_-10px_rgba(14,165,233,0.2)]">
                   <div className="-mt-6">
                     <div>
-                      <span className="inline-flex items-center justify-center p-3 bg-brand-900 rounded-md shadow-lg group-hover:bg-brand-600 transition-colors duration-300 ring-4 ring-slate-950">
-                        <feature.icon className="h-6 w-6 text-brand-100 transform group-hover:rotate-12 transition-transform duration-300" aria-hidden="true" />
+                      <span className="inline-flex items-center justify-center p-3 bg-brand-100 dark:bg-brand-900 rounded-md shadow-lg group-hover:bg-brand-600 transition-colors duration-300 ring-4 ring-slate-50 dark:ring-slate-950">
+                        <feature.icon className="h-6 w-6 text-brand-600 dark:text-brand-100 group-hover:text-white transform group-hover:rotate-12 transition-all duration-300" aria-hidden="true" />
                       </span>
                     </div>
-                    <h3 className="mt-8 text-lg font-medium text-white tracking-tight group-hover:text-brand-400 transition-colors">{feature.title}</h3>
-                    <p className="mt-5 text-base text-slate-400 leading-relaxed">
+                    <h3 className="mt-8 text-lg font-medium text-slate-900 dark:text-white tracking-tight group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{feature.title}</h3>
+                    <p className="mt-5 text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

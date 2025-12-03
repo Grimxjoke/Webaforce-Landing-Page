@@ -37,16 +37,16 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-slate-950 border-t border-slate-900 scroll-mt-20">
+    <section id="faq" className="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 scroll-mt-20 transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-slate-800 text-brand-400 mb-4 border border-slate-700">
+          <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-white dark:bg-slate-800 text-brand-600 dark:text-brand-400 mb-4 border border-slate-200 dark:border-slate-700 shadow-sm">
             <HelpCircle className="h-6 w-6" />
           </div>
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl transition-colors duration-300">
             Questions Fréquentes
           </h2>
-          <p className="mt-4 text-xl text-slate-400">
+          <p className="mt-4 text-xl text-slate-600 dark:text-slate-400 transition-colors duration-300">
             Tout ce que vous devez savoir avant d'automatiser votre succès.
           </p>
         </div>
@@ -55,32 +55,35 @@ const FAQ: React.FC = () => {
           {faqs.map((faq, index) => (
             <div 
               key={index} 
-              className={`border rounded-lg transition-colors duration-200 ${
+              className={`border rounded-lg transition-all duration-200 ${
                 openIndex === index 
-                  ? 'bg-slate-900 border-brand-500/50 shadow-[0_0_15px_rgba(14,165,233,0.1)]' 
-                  : 'bg-slate-900/50 border-slate-800 hover:border-slate-700'
+                  ? 'bg-white dark:bg-slate-900 border-brand-500/50 shadow-md' 
+                  : 'bg-white/50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
               }`}
             >
               <button
                 className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
                 onClick={() => toggleFAQ(index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
-                <span className={`font-medium text-lg ${openIndex === index ? 'text-brand-400' : 'text-slate-200'}`}>
+                <span className={`font-medium text-lg transition-colors ${openIndex === index ? 'text-brand-600 dark:text-brand-400' : 'text-slate-800 dark:text-slate-200'}`}>
                   {faq.question}
                 </span>
                 {openIndex === index ? (
-                  <ChevronUp className="h-5 w-5 text-brand-400" />
+                  <ChevronUp className="h-5 w-5 text-brand-600 dark:text-brand-400" />
                 ) : (
                   <ChevronDown className="h-5 w-5 text-slate-500" />
                 )}
               </button>
               
               <div 
+                id={`faq-answer-${index}`}
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-6 pb-6 text-slate-400 leading-relaxed">
+                <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
                   {faq.answer}
                 </div>
               </div>

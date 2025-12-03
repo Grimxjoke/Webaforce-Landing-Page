@@ -52,13 +52,13 @@ const tiers: PricingTier[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-20 bg-slate-900 scroll-mt-20">
+    <section id="pricing" className="py-20 bg-slate-100 dark:bg-slate-900 scroll-mt-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl transition-colors duration-300">
             Investissez dans votre Croissance
           </h2>
-          <p className="mt-4 text-xl text-slate-400">
+          <p className="mt-4 text-xl text-slate-600 dark:text-slate-400 transition-colors duration-300">
             Des solutions évolutives conçues pour maximiser votre retour sur investissement dès le premier mois.
           </p>
         </div>
@@ -67,10 +67,10 @@ const Pricing: React.FC = () => {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`relative p-8 bg-slate-800 border rounded-2xl shadow-sm flex flex-col transition-all duration-300 ${
+              className={`relative p-8 bg-white dark:bg-slate-800 border rounded-2xl shadow-sm flex flex-col transition-all duration-300 ${
                 tier.recommended
-                  ? 'border-brand-500 shadow-[0_0_40px_rgba(14,165,233,0.2)] scale-105 z-10 bg-slate-800/80 backdrop-blur'
-                  : 'border-slate-700 hover:border-slate-600'
+                  ? 'border-brand-500 shadow-xl shadow-brand-500/10 dark:shadow-[0_0_40px_rgba(14,165,233,0.2)] scale-105 z-10 dark:bg-slate-800/80 dark:backdrop-blur'
+                  : 'border-slate-200 dark:border-slate-700 hover:border-brand-300 dark:hover:border-slate-600'
               }`}
             >
               {tier.recommended && (
@@ -80,28 +80,28 @@ const Pricing: React.FC = () => {
               )}
               
               <div className="flex-1">
-                <h3 className={`text-xl font-bold ${tier.name === 'Domination' ? 'text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400' : 'text-white'}`}>
+                <h3 className={`text-xl font-bold ${tier.name === 'Domination' ? 'text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600 dark:from-brand-400 dark:to-purple-400' : 'text-slate-900 dark:text-white'}`}>
                     {tier.name}
                 </h3>
-                <p className="mt-4 flex items-baseline text-white">
+                <p className="mt-4 flex items-baseline text-slate-900 dark:text-white">
                   {tier.customPrice ? (
                     <span className="text-4xl font-extrabold tracking-tight">{tier.customPrice}</span>
                   ) : (
                     <>
                       <span className="text-5xl font-extrabold tracking-tight">{tier.price}€</span>
-                      <span className="ml-1 text-xl font-semibold text-slate-400">/mois</span>
+                      <span className="ml-1 text-xl font-semibold text-slate-500 dark:text-slate-400">/mois</span>
                     </>
                   )}
                 </p>
-                <p className="mt-6 text-slate-400 text-sm leading-relaxed">{tier.description}</p>
+                <p className="mt-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{tier.description}</p>
 
                 <ul role="list" className="mt-6 space-y-4">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start">
                       <div className="flex-shrink-0">
-                        <Check className="h-5 w-5 text-brand-400" aria-hidden="true" />
+                        <Check className="h-5 w-5 text-brand-500 dark:text-brand-400" aria-hidden="true" />
                       </div>
-                      <span className="ml-3 text-sm text-slate-300">{feature}</span>
+                      <span className="ml-3 text-sm text-slate-600 dark:text-slate-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -113,8 +113,8 @@ const Pricing: React.FC = () => {
                   tier.recommended
                     ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-lg hover:shadow-brand-500/40'
                     : tier.name === 'Domination' 
-                        ? 'bg-gradient-to-r from-brand-900 to-slate-900 border-brand-700 text-brand-100 hover:from-brand-800 hover:to-slate-800'
-                        : 'bg-slate-700 text-brand-100 hover:bg-slate-600'
+                        ? 'bg-gradient-to-r from-brand-900 to-slate-900 dark:from-brand-900 dark:to-slate-900 border-brand-700 text-white dark:text-brand-100 hover:from-brand-800 hover:to-slate-800'
+                        : 'bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-brand-100 hover:bg-slate-200 dark:hover:bg-slate-600'
                 }`}
               >
                 {tier.buttonText || `Choisir ${tier.name}`}

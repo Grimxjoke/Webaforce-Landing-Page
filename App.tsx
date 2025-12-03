@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
@@ -12,9 +12,36 @@ const Pricing = lazy(() => import('./components/Pricing'));
 const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
+  // Default to light mode
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Check local storage or system preference on mount
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newMode = !isDark;
+    setIsDark(newMode);
+    if (newMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-brand-500 selection:text-white">
-      <Navbar />
+    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300 selection:bg-brand-500 selection:text-white">
+      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero />
         <Suspense fallback={
