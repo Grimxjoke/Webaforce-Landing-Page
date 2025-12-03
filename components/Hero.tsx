@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
             <div className="mt-3 sm:mt-0">
               <a
                 href="#demo"
-                className="w-full flex items-center justify-center px-8 py-3 border border-brand-500/30 text-base font-medium rounded-md text-brand-400 bg-slate-900/50 hover:bg-slate-800 hover:border-brand-500/60 md:py-4 md:text-lg transition-all backdrop-blur-sm group"
+                className="w-full flex items-center justify-center px-8 py-3 border border-brand-500 text-base font-medium rounded-md text-brand-400 bg-slate-900/50 hover:bg-slate-800 hover:border-brand-400 md:py-4 md:text-lg transition-all backdrop-blur-sm group"
               >
                 <Play className="ml-2 h-4 w-4 mr-2 fill-current group-hover:text-brand-300 transition-colors" />
                 Voir la démo
@@ -70,11 +70,15 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60 z-10"></div>
               <div className="absolute inset-0 bg-brand-500/10 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-overlay"></div>
               
-              {/* Image: Futuristic AI Brain/Network - Dark Mode Theme */}
+              {/* Image: Futuristic AI Brain/Network - Optimized for LCP */}
               <img 
                 src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000" 
                 alt="Intelligence Artificielle WEBAFORCE" 
                 className="w-full h-auto object-cover min-h-[400px]"
+                width="1000"
+                height="600"
+                // @ts-ignore - fetchpriority is a valid attribute but React types might complain in older versions
+                fetchpriority="high"
               />
 
               {/* Floating Elements Overlay */}
