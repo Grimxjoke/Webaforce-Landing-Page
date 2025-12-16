@@ -64,10 +64,15 @@ const Contact: React.FC = () => {
             <div className="absolute inset-0 z-0">
                 <img 
                     src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
-                    srcSet="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800 800w"
+                    srcSet="
+                      https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=400 400w, 
+                      https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800 800w
+                    "
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     alt="Connexion Mondiale" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+                    width="800"
+                    height="600"
                     loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-brand-900/90 to-slate-900/90 mix-blend-multiply"></div>

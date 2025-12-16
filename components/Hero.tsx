@@ -72,11 +72,16 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 z-10"></div>
               <div className="absolute inset-0 bg-brand-500/10 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-overlay"></div>
               
+              {/* Responsive Image with SrcSet and Explicit Width/Height for SEO & Performance */}
               <img 
                 src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000" 
-                srcSet="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=600 600w, https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000 1000w"
+                srcSet="
+                  https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=600 600w,
+                  https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000 1000w,
+                  https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200 1200w
+                "
                 sizes="(max-width: 768px) 100vw, 50vw"
-                alt="Intelligence Artificielle WEBAFORCE" 
+                alt="Intelligence Artificielle WEBAFORCE - Interface Futuriste" 
                 className="w-full h-auto object-cover min-h-[400px]"
                 width="1000"
                 height="600"
