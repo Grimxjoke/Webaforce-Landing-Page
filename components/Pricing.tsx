@@ -1,107 +1,93 @@
 import React from 'react';
-import { Check, Star } from 'lucide-react';
-import { PricingTier } from '../types';
+import { Check, ShieldCheck } from 'lucide-react';
 
-const tiers: PricingTier[] = [
+const solutions = [
   {
-    name: 'Essentiel',
-    price: 297,
-    description: "L'étincelle pour réactiver votre trésorerie dormante.",
+    name: 'Solution Artisans',
+    description: "L'essentiel pour ne plus rater d'appels et professionnaliser votre accueil.",
     features: [
-      'Réactivation de Base Client (Email/SMS)',
-      'CRM de Gestion de Contacts',
-      'Automatisations Marketing de base',
-      'Support par email',
-      'Rapports de performance mensuels'
+      'Relance SMS automatique sur appels manqués',
+      'Réactivation de votre base de données clients',
+      'Gestion centralisée des messages (SMS/WhatsApp)',
+      'Installation du Chatbot IA sur votre site',
+      'Accès à l\'application mobile de gestion'
     ],
-    recommended: false
+    highlight: false
   },
   {
-    name: 'Croissance',
-    price: 497,
-    description: "L'automatisation totale pour ne plus jamais perdre un prospect.",
+    name: 'Solution Performance',
+    description: "Le système complet pour déléguer totalement la prise de rendez-vous.",
     features: [
-      'Tout du pack Essentiel',
-      'Chatbot IA Conversationnel (Site Web)',
-      'Agent IA Vocal (Ligne téléphonique dédiée)',
-      'Relance SMS sur Appel Manqué',
-      'Prise de RDV 100% Autonome',
-      'Gestion Centralisée des Réseaux Sociaux',
-      'Support Prioritaire VIP'
+      'Tout de la Solution Artisans',
+      'Agent Vocal IA (Répond au téléphone 24/7)',
+      'Qualification complète des projets travaux',
+      'Synchronisation avec votre agenda pro',
+      'Relances automatiques des devis non signés',
+      'Demandes d\'avis Google automatisées'
     ],
-    recommended: true
+    highlight: true
   },
   {
-    name: 'Domination',
-    price: 0,
-    customPrice: "Sur Mesure",
-    buttonText: "Contacter un expert",
-    description: "Nous devenons votre département marketing complet.",
+    name: 'Sur-Mesure / Multi-Équipes',
+    description: "Pour les entreprises de couverture structurées avec plusieurs équipes.",
     features: [
-      'Tout du pack Croissance',
-      'Gestion Publicitaire (Google Ads & Facebook)',
-      'SEO Avancé & Référencement Local',
-      'Création de Contenu Vidéo (Reels/TikTok)',
-      'Stratégie de Marque Complète',
-      'Responsable de Compte Dédié',
-      'Rapports Hebdomadaires Détaillés'
+      'Tout de la Solution Performance',
+      'Gestion multi-numéros / multi-agences',
+      'Intégration CRM métier avancée',
+      'Rapports de performance détaillés par équipe',
+      'Accompagnement stratégique dédié',
+      'Support prioritaire 7j/7'
     ],
-    recommended: false
-  },
+    highlight: false
+  }
 ];
 
 const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-20 bg-slate-100 dark:bg-slate-900 scroll-mt-20 transition-colors duration-300">
+    <section id="solutions" className="py-24 bg-slate-100 dark:bg-slate-900 scroll-mt-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl transition-colors duration-300">
-            Investissez dans votre Croissance
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
+            Nos Accompagnements
           </h2>
-          <p className="mt-4 text-xl text-slate-600 dark:text-slate-400 transition-colors duration-300">
-            Des solutions évolutives conçues pour maximiser votre retour sur investissement dès le premier mois.
+          <p className="mt-4 text-xl text-slate-600 dark:text-slate-400 font-medium">
+            Pas d'abonnement caché, juste des solutions concrètes pour développer votre entreprise.
           </p>
         </div>
         
-        <div className="mt-12 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8 max-w-7xl mx-auto">
-          {tiers.map((tier) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {solutions.map((sol) => (
             <div
-              key={tier.name}
-              className={`relative p-8 bg-white dark:bg-slate-800 border rounded-2xl shadow-sm flex flex-col transition-all duration-300 ${
-                tier.recommended
-                  ? 'border-brand-500 shadow-xl shadow-brand-500/10 dark:shadow-[0_0_40px_rgba(14,165,233,0.2)] scale-105 z-10 dark:bg-slate-800/80 dark:backdrop-blur'
-                  : 'border-slate-200 dark:border-slate-700 hover:border-brand-300 dark:hover:border-slate-600'
+              key={sol.name}
+              className={`relative p-10 bg-white dark:bg-slate-800 rounded border-2 flex flex-col transition-all ${
+                sol.highlight
+                  ? 'border-accent-600 shadow-xl shadow-accent-600/10 scale-105 z-10'
+                  : 'border-transparent shadow-md'
               }`}
             >
-              {tier.recommended && (
-                 <div className="absolute top-0 py-1.5 px-4 bg-gradient-to-r from-brand-600 to-accent-500 rounded-full transform -translate-y-1/2 left-1/2 -translate-x-1/2 text-xs font-bold text-white tracking-wide uppercase shadow-lg flex items-center gap-1">
-                    <Star className="w-3 h-3 fill-current" /> Meilleur ROI
+              {sol.highlight && (
+                 <div className="absolute top-0 py-1 px-4 bg-accent-600 rounded-full transform -translate-y-1/2 left-1/2 -translate-x-1/2 text-xs font-black text-white uppercase tracking-widest shadow-lg">
+                    Recommandé
                  </div>
               )}
               
               <div className="flex-1">
-                <h3 className={`text-xl font-bold ${tier.name === 'Domination' ? 'text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600 dark:from-brand-400 dark:to-purple-400' : 'text-slate-900 dark:text-white'}`}>
-                    {tier.name}
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
+                    {sol.name}
                 </h3>
-                <p className="mt-4 flex items-baseline text-slate-900 dark:text-white">
-                  {tier.customPrice ? (
-                    <span className="text-4xl font-extrabold tracking-tight">{tier.customPrice}</span>
-                  ) : (
-                    <>
-                      <span className="text-5xl font-extrabold tracking-tight">{tier.price}€</span>
-                      <span className="ml-1 text-xl font-semibold text-slate-500 dark:text-slate-400">/mois</span>
-                    </>
-                  )}
+                <p className="mt-4 text-slate-600 dark:text-slate-400 font-medium italic">
+                    {sol.description}
                 </p>
-                <p className="mt-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{tier.description}</p>
 
-                <ul role="list" className="mt-6 space-y-4">
-                  {tier.features.map((feature) => (
+                <div className="h-px bg-slate-100 dark:bg-slate-700 my-8"></div>
+
+                <ul role="list" className="space-y-4">
+                  {sol.features.map((feature) => (
                     <li key={feature} className="flex items-start">
-                      <div className="flex-shrink-0">
-                        <Check className="h-5 w-5 text-brand-500 dark:text-brand-400" aria-hidden="true" />
+                      <div className="flex-shrink-0 mt-1">
+                        <Check className="h-4 w-4 text-accent-600" aria-hidden="true" />
                       </div>
-                      <span className="ml-3 text-sm text-slate-600 dark:text-slate-300">{feature}</span>
+                      <span className="ml-3 text-sm font-bold text-slate-700 dark:text-slate-300 leading-tight">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -109,18 +95,24 @@ const Pricing: React.FC = () => {
 
               <a
                 href="#contact"
-                className={`mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-bold text-sm uppercase tracking-wide transition-all ${
-                  tier.recommended
-                    ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-lg hover:shadow-brand-500/40'
-                    : tier.name === 'Domination' 
-                        ? 'bg-gradient-to-r from-brand-900 to-slate-900 dark:from-brand-900 dark:to-slate-900 border-brand-700 text-white dark:text-brand-100 hover:from-brand-800 hover:to-slate-800'
-                        : 'bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-brand-100 hover:bg-slate-200 dark:hover:bg-slate-600'
+                className={`mt-10 block w-full py-4 px-6 rounded text-center font-black uppercase tracking-widest transition-all ${
+                  sol.highlight
+                    ? 'bg-accent-600 text-white hover:bg-accent-700'
+                    : 'bg-slate-900 dark:bg-slate-700 text-white hover:bg-slate-800'
                 }`}
               >
-                {tier.buttonText || `Choisir ${tier.name}`}
+                Demander plus d'infos
               </a>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 flex flex-col items-center justify-center p-8 bg-white dark:bg-slate-800 rounded border border-dashed border-slate-300 dark:border-slate-700">
+            <ShieldCheck className="h-10 w-10 text-accent-600 mb-4" />
+            <p className="text-center font-bold text-slate-900 dark:text-white uppercase tracking-tight">
+                Installation garantie en moins de 10 jours <br/>
+                <span className="text-slate-500 font-medium normal-case">Sans engagement de durée. Vous restez maître de votre entreprise.</span>
+            </p>
         </div>
       </div>
     </section>

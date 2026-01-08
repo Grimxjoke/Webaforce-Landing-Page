@@ -3,21 +3,17 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 
-// Lazy load components that are below the fold to reduce initial bundle size
+// Lazy load components
 const Services = lazy(() => import('./components/Services'));
-const ROICalculator = lazy(() => import('./components/ROICalculator'));
-const Testimonials = lazy(() => import('./components/Testimonials'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const AIDemo = lazy(() => import('./components/AIDemo'));
 const Pricing = lazy(() => import('./components/Pricing'));
 const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
-  // Default to light mode
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check local storage or system preference on mount
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       setIsDark(true);
@@ -41,21 +37,19 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300 selection:bg-brand-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300 selection:bg-accent-500 selection:text-white">
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero />
         <Suspense fallback={
           <div className="py-20 flex justify-center items-center">
-            <div className="h-8 w-8 animate-spin rounded-full border-2 border-brand-500 border-t-transparent"></div>
+            <div className="h-10 w-10 animate-spin rounded border-4 border-accent-600 border-t-transparent"></div>
           </div>
         }>
           <Services />
-          <ROICalculator />
-          <Testimonials />
-          <FAQ />
           <AIDemo />
           <Pricing />
+          <FAQ />
           <Contact />
         </Suspense>
       </main>

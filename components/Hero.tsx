@@ -1,108 +1,79 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Play } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <div className="relative pt-24 pb-16 sm:pt-32 overflow-hidden transition-colors duration-300">
-      {/* Background Effects */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-100/50 via-slate-50 to-slate-50 dark:from-brand-900/40 dark:via-slate-950 dark:to-slate-950 transition-colors duration-300"></div>
-        <div className="absolute top-20 right-10 w-72 h-72 bg-brand-500/5 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl"></div>
+    <div className="relative pt-24 pb-16 sm:pt-32 overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+      {/* Texture de fond discrète */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-        <div className="text-center md:text-left md:w-1/2 pt-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-semibold tracking-wide uppercase mb-6">
-            <span className="flex h-2 w-2 rounded-full bg-brand-500 dark:bg-brand-400 mr-2 animate-pulse"></span>
-            Nouvelle technologie {currentYear}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+        <div className="text-center lg:text-left lg:w-3/5">
+          <div className="inline-flex items-center px-4 py-1.5 rounded bg-accent-600/10 border border-accent-600/20 text-accent-700 dark:text-accent-500 text-sm font-bold tracking-widest uppercase mb-6">
+            Spécialiste Couvreurs & Charpentiers
           </div>
-          <h1 className="text-4xl tracking-tight font-extrabold text-slate-900 dark:text-white sm:text-5xl md:text-6xl leading-tight transition-colors duration-300">
-            <span className="block">Dominez votre marché par</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600 dark:from-brand-400 dark:to-accent-500">
-              l'Automatisation Intelligente
-            </span>
+          <h1 className="text-4xl tracking-tight font-black text-slate-900 dark:text-white sm:text-5xl md:text-6xl leading-[1.1] transition-colors duration-300 uppercase">
+            Ne laissez plus vos devis <br/>
+            <span className="text-accent-600">s'envoler.</span>
           </h1>
-          <p className="mt-6 max-w-md mx-auto md:mx-0 text-base text-slate-600 dark:text-slate-400 sm:text-lg md:mt-5 md:text-xl leading-relaxed transition-colors duration-300">
-            <strong>WEBAFORCE</strong> est l'agence leader en solutions d'intelligence artificielle pour PME. Nous transformons radicalement votre acquisition client : de la <strong>réactivation de base de données</strong> à la gestion multicanale centralisée. Déployez des systèmes qui travaillent 24/7 et génèrent du profit pendant que vous dormez.
+          <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+            Sur le toit ou en plein chantier ? <strong>WEBAFORCE</strong> automatise votre accueil client. Notre IA répond à vos appels, qualifie les demandes de travaux et fixe vos rendez-vous 24h/24. Concentrez-vous sur votre métier, nous gérons votre carnet de commandes.
           </p>
           
-          <div className="mt-8 sm:flex sm:justify-center md:justify-start gap-4">
-            <div className="rounded-md shadow">
-              <a
-                href="#pricing"
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 md:py-4 md:text-lg transition-all shadow-lg shadow-brand-500/20"
-              >
-                Découvrir nos Offres
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </div>
-            <div className="mt-3 sm:mt-0">
-              <a
-                href="#demo"
-                className="w-full flex items-center justify-center px-8 py-3 border border-slate-200 dark:border-brand-500 text-base font-medium rounded-md text-slate-700 dark:text-brand-400 bg-white/50 dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-brand-400 md:py-4 md:text-lg transition-all backdrop-blur-sm group"
-              >
-                <Play className="ml-2 h-4 w-4 mr-2 fill-current group-hover:text-brand-600 dark:group-hover:text-brand-300 transition-colors" />
-                Voir la démo
-              </a>
-            </div>
+          <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <a
+              href="#contact"
+              className="flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded bg-accent-600 hover:bg-accent-700 text-white transition-all shadow-lg uppercase tracking-wider"
+            >
+              Demander une étude gratuite
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+            <a
+              href="#demo"
+              className="flex items-center justify-center px-8 py-4 border-2 border-slate-300 dark:border-slate-700 text-base font-bold rounded text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all uppercase tracking-wider"
+            >
+              <Phone className="mr-2 h-5 w-5 text-accent-600" />
+              Tester l'Agent Vocal
+            </a>
           </div>
 
-          <div className="mt-8 flex items-center justify-center md:justify-start gap-6 text-sm text-slate-600 dark:text-slate-500 transition-colors duration-300">
-            <div className="flex items-center gap-1">
-                <CheckCircle2 className="h-4 w-4 text-brand-600 dark:text-brand-500" aria-hidden="true" />
-                <span>Installation Rapide</span>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm font-bold text-slate-600 dark:text-slate-400">
+            <div className="flex items-center gap-2 justify-center lg:justify-start">
+                <CheckCircle2 className="h-5 w-5 text-accent-600" />
+                <span>Réponse 24h/7j</span>
             </div>
-            <div className="flex items-center gap-1">
-                <CheckCircle2 className="h-4 w-4 text-brand-600 dark:text-brand-500" aria-hidden="true" />
-                <span>ROI Mesurable</span>
+            <div className="flex items-center gap-2 justify-center lg:justify-start">
+                <CheckCircle2 className="h-5 w-5 text-accent-600" />
+                <span>Zéro appel manqué</span>
             </div>
-            <div className="flex items-center gap-1">
-                <CheckCircle2 className="h-4 w-4 text-brand-600 dark:text-brand-500" aria-hidden="true" />
-                <span>Sans Engagement</span>
+            <div className="flex items-center gap-2 justify-center lg:justify-start">
+                <CheckCircle2 className="h-5 w-5 text-accent-600" />
+                <span>Devis qualifiés</span>
             </div>
           </div>
         </div>
 
-        {/* Visual Representation */}
-        <div className="mt-12 md:mt-0 md:w-1/2 relative perspective-1000">
-           <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700 group transform transition-all duration-500 hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 z-10"></div>
-              <div className="absolute inset-0 bg-brand-500/10 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-overlay"></div>
-              
-              {/* Responsive Image with SrcSet and Explicit Width/Height for SEO & Performance */}
+        {/* Hero Image - Couvreur/Charpente */}
+        <div className="lg:w-2/5 relative">
+           <div className="relative rounded shadow-2xl overflow-hidden border-8 border-white dark:border-slate-800 transform rotate-1 hover:rotate-0 transition-transform duration-500">
               <img 
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000" 
-                srcSet="
-                  https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=600 600w,
-                  https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000 1000w,
-                  https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200 1200w
-                "
-                sizes="(max-width: 768px) 100vw, 50vw"
-                alt="Intelligence Artificielle WEBAFORCE - Interface Futuriste" 
-                className="w-full h-auto object-cover min-h-[400px]"
-                width="1000"
-                height="600"
-                // @ts-ignore
-                fetchpriority="high"
+                src="https://images.unsplash.com/photo-1635424710928-0544e8512eea?auto=format&fit=crop&q=80&w=800" 
+                alt="Travaux de couverture et charpente professionnelle" 
+                className="w-full h-auto object-cover min-h-[450px]"
               />
-
-              {/* Floating Elements Overlay */}
-              <div className="absolute bottom-6 left-6 z-20 right-6">
-                 <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-700/50 p-4 rounded-xl shadow-lg flex items-center gap-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="h-12 w-12 rounded-full bg-brand-100 dark:bg-brand-500/20 flex items-center justify-center text-brand-600 dark:text-brand-400">
-                        <div className="w-3 h-3 bg-brand-500 dark:bg-brand-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(56,189,248,0.8)]"></div>
-                    </div>
-                    <div>
-                        <p className="text-slate-900 dark:text-white font-bold text-sm">Système WEBAFORCE Actif</p>
-                        <p className="text-brand-600 dark:text-brand-400 text-xs">Analyse des leads en temps réel...</p>
-                    </div>
-                    <div className="ml-auto text-green-600 dark:text-green-400 text-xs font-mono font-bold">
-                        +34% CROISSANCE
-                    </div>
-                 </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 dark:bg-slate-900/95 p-4 rounded shadow-lg border-l-4 border-accent-600">
+                  <p className="text-slate-900 dark:text-white font-black uppercase text-xs tracking-widest mb-1">Status Système</p>
+                  <p className="text-accent-700 dark:text-accent-500 font-bold text-sm">IA en ligne : Prise de RDV active</p>
               </div>
            </div>
         </div>

@@ -1,74 +1,67 @@
 import React from 'react';
-import { MessageSquare, RefreshCw, Smartphone, Share2, TrendingUp, CalendarClock } from 'lucide-react';
+import { MessageSquare, RefreshCw, Smartphone, PhoneMissed, MapPin, ClipboardCheck } from 'lucide-react';
 import { ServiceFeature } from '../types';
 
 const features: ServiceFeature[] = [
   {
-    title: "Réactivation de Base Client",
-    description: "Vos anciens clients sont votre plus grande richesse inexploitée. Notre système identifie, segmente et recontacte automatiquement vos listes inactives via des campagnes SMS et Email hyper-personnalisées. Résultat : des ventes immédiates sans dépenser un centime en publicité.",
-    icon: RefreshCw
+    title: "Relance sur Appels Manqués",
+    description: "Vous êtes sur une échelle et vous ne pouvez pas répondre ? Notre système détecte l'appel manqué et envoie instantanément un SMS personnalisé à votre prospect pour fixer un rendez-vous avant qu'il n'appelle un autre couvreur.",
+    icon: PhoneMissed
   },
   {
-    title: "Agent IA Conversationnel",
-    description: "Installez un commercial expert sur votre site web. Disponible 24h/24 et 7j/7, notre chatbot intelligent qualifie chaque visiteur, répond aux objections en temps réel et capture les coordonnées des prospects chauds directement dans votre CRM.",
-    icon: MessageSquare
-  },
-  {
-    title: "Relance SMS sur Appel Manqué",
-    description: "62% des appels aux PME restent sans réponse, ce qui équivaut à une perte massive de chiffre d'affaires. Notre technologie 'Missed-Call Text-Back' détecte instantanément l'appel manqué et engage la conversation par SMS pour sécuriser le client avant qu'il n'appelle votre concurrent.",
+    title: "Secrétariat IA 24h/24",
+    description: "Un agent vocal intelligent qui décroche à votre place, même le soir et le week-end. Il qualifie le type de travaux (fuite, rénovation, charpente), prend les coordonnées et enregistre la demande dans votre interface.",
     icon: Smartphone
   },
   {
-    title: "Prise de RDV Autonome",
-    description: "Éliminez les allers-retours interminables pour fixer une date. L'IA gère votre agenda, propose les créneaux libres, envoie les confirmations et les rappels automatiques, réduisant drastiquement le taux d'absentéisme (No-Show) à vos rendez-vous.",
-    icon: CalendarClock
+    title: "Réactivation des Devis en Attente",
+    description: "Vous avez des devis envoyés qui dorment ? Notre automate relance poliment vos clients par SMS ou Email pour valider le chantier, sans que vous ayez à passer un seul coup de fil de relance.",
+    icon: RefreshCw
   },
   {
-    title: "Centralisation Omnicanale",
-    description: "Ne jonglez plus entre les onglets. Facebook Messenger, Instagram DM, Google Business Profile, SMS, et Email sont désormais centralisés. Pilotez toutes vos conversations clients depuis un tableau de bord unique, intuitif et performant pour une réactivité maximale.",
-    icon: Share2
+    title: "Prise de RDV Chantier",
+    description: "L'IA accède à vos disponibilités et cale directement vos rendez-vous de métrage ou de visite technique dans votre agenda. Elle gère aussi les confirmations pour éviter les déplacements inutiles.",
+    icon: ClipboardCheck
   },
   {
-    title: "Croissance Prédictible",
-    description: "Passez de l'incertitude à la prévisibilité. Nos systèmes d'automatisation sont conçus pour générer un flux constant et mesurable de nouveaux prospects qualifiés chaque mois, vous permettant de planifier votre croissance financière avec sérénité.",
-    icon: TrendingUp
+    title: "Référencement Local & Avis",
+    description: "Boostez votre visibilité sur Google Maps. Nous automatisons la demande d'avis positifs auprès de vos clients satisfaits après chaque fin de chantier pour vous assurer de rester le N°1 de votre secteur.",
+    icon: MapPin
+  },
+  {
+    title: "Standard Centralisé",
+    description: "Retrouvez tous vos messages (SMS, WhatsApp, appels, Facebook) au même endroit. Ne perdez plus aucune information client, tout est archivé et facile à retrouver pour vos futurs chantiers.",
+    icon: MessageSquare
   }
 ];
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-20 bg-slate-50 dark:bg-slate-950 scroll-mt-20 transition-colors duration-300">
+    <section id="services" className="py-24 bg-white dark:bg-slate-950 scroll-mt-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-base text-brand-600 dark:text-brand-400 font-semibold tracking-wide uppercase">L'Arsenal WEBAFORCE</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl transition-colors duration-300">
-            Une suite technologique pour dominer votre secteur
+        <div className="max-w-3xl">
+          <h2 className="text-accent-600 font-black uppercase tracking-widest text-sm">Outils de Croissance</h2>
+          <p className="mt-2 text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">
+            Gagnez du temps sur l'administratif, <br/>
+            <span className="text-slate-400 dark:text-slate-600">Gagnez de l'argent sur le toit.</span>
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-slate-600 dark:text-slate-400 mx-auto transition-colors duration-300">
-            L'automatisation n'est plus une option, c'est une nécessité. Découvrez comment nos solutions transforment vos processus manuels en machines à générer du profit.
+          <p className="mt-6 text-xl text-slate-600 dark:text-slate-400 font-medium">
+            Nous avons conçu nos solutions spécifiquement pour répondre aux contraintes des métiers du bâtiment.
           </p>
         </div>
 
-        <div className="mt-16">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <div key={index} className="pt-6 group">
-                <div className="flow-root bg-white dark:bg-slate-900 rounded-lg px-6 pb-8 h-full border border-slate-200 dark:border-slate-800 transition-all duration-300 ease-out transform group-hover:scale-[1.03] group-hover:border-brand-500 group-hover:shadow-[0_10px_40px_-10px_rgba(14,165,233,0.15)] dark:group-hover:shadow-[0_10px_40px_-10px_rgba(14,165,233,0.2)]">
-                  <div className="-mt-6">
-                    <div>
-                      <span className="inline-flex items-center justify-center p-3 bg-brand-100 dark:bg-brand-900 rounded-md shadow-lg group-hover:bg-brand-600 transition-colors duration-300 ring-4 ring-slate-50 dark:ring-slate-950">
-                        <feature.icon className="h-6 w-6 text-brand-600 dark:text-brand-100 group-hover:text-white transform group-hover:rotate-12 transition-all duration-300" aria-hidden="true" />
-                      </span>
-                    </div>
-                    <h3 className="mt-8 text-lg font-medium text-slate-900 dark:text-white tracking-tight group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{feature.title}</h3>
-                    <p className="mt-5 text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
+        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, index) => (
+            <div key={index} className="group relative bg-slate-50 dark:bg-slate-900 p-8 rounded border border-slate-200 dark:border-slate-800 hover:border-accent-600/50 transition-all">
+              <div className="mb-6 inline-flex items-center justify-center p-3 bg-white dark:bg-slate-800 rounded shadow-sm text-accent-600 group-hover:bg-accent-600 group-hover:text-white transition-all">
+                <feature.icon className="h-6 w-6" aria-hidden="true" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-tight">{feature.title}</h3>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                {feature.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
