@@ -62,35 +62,63 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Image - Couvreur/Charpente avec Interface IA */}
+        {/* Hero Image - Simulation de l'image de l'artisan connecté */}
         <div className="lg:w-2/5 relative">
-           <div className="relative rounded shadow-2xl overflow-hidden border-8 border-white dark:border-slate-800 transform rotate-1 hover:rotate-0 transition-transform duration-500 bg-slate-200 dark:bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1621905235858-668d249edbbd?auto=format&fit=crop&q=80&w=1200" 
-                alt="Charpentier professionnel utilisant des outils digitaux avancés" 
-                className="w-full h-auto object-cover min-h-[450px] mix-blend-normal"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
+           <div className="relative rounded-xl shadow-2xl overflow-hidden border-4 border-white dark:border-slate-800 transform lg:rotate-2 hover:rotate-0 transition-all duration-700 bg-slate-200 dark:bg-slate-800 group">
               
-              {/* Overlay technologique pour simuler l'interface holographique */}
-              <div className="absolute top-1/4 left-0 right-0 h-1/2 flex items-center justify-center pointer-events-none opacity-40">
-                <div className="w-full h-px bg-accent-500/50 shadow-[0_0_15px_rgba(245,158,11,0.5)]"></div>
+              {/* Image principale (Charpentier sur toit) */}
+              <img 
+                src="https://images.unsplash.com/photo-1635424710928-0544e8512eea?auto=format&fit=crop&q=80&w=1200" 
+                alt="Charpentier professionnel sur un chantier de toiture" 
+                className="w-full h-auto object-cover min-h-[500px] transition-transform duration-700 group-hover:scale-110"
+                loading="eager"
+              />
+
+              {/* Overlay Holographique / Tech (Simule l'IA de la photo) */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent-600/20 via-transparent to-blue-500/20 mix-blend-overlay"></div>
+              
+              {/* Éléments HUD (Lignes et grilles technologiques) */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-40 group-hover:opacity-60 transition-opacity">
+                  <div className="absolute top-1/4 left-0 right-0 h-[1px] bg-blue-400 shadow-[0_0_10px_#60a5fa] animate-[pulse_4s_infinite]"></div>
+                  <div className="absolute top-1/3 left-10 w-32 h-32 border border-blue-400/30 rounded-full flex items-center justify-center">
+                      <div className="w-24 h-24 border border-blue-400/20 rounded-full border-dashed animate-[spin_10s_linear_infinite]"></div>
+                  </div>
+                  <div className="absolute bottom-1/4 right-10 flex flex-col gap-1">
+                      {[1,2,3,4].map(i => <div key={i} className="h-1 w-8 bg-blue-400/40" style={{width: `${Math.random()*40 + 20}px`}}></div>)}
+                  </div>
               </div>
 
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 dark:bg-slate-900/95 p-4 rounded shadow-lg border-l-4 border-accent-600 backdrop-blur-sm">
-                  <p className="text-slate-900 dark:text-white font-black uppercase text-[10px] tracking-widest mb-1">Algorithme Métier</p>
-                  <p className="text-accent-700 dark:text-accent-500 font-bold text-sm">IA de Qualification active : 100% opérationnelle</p>
+              {/* Badge d'information IA style HUD */}
+              <div className="absolute bottom-6 left-6 right-6 bg-slate-900/80 backdrop-blur-md p-5 rounded-lg border border-blue-500/30 shadow-2xl">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="h-2 w-2 rounded-full bg-blue-400 animate-pulse"></div>
+                    <p className="text-blue-400 font-black uppercase text-[10px] tracking-[0.3em]">IA Analysis Terminal</p>
+                  </div>
+                  <p className="text-white font-bold text-sm tracking-tight leading-snug">
+                    <span className="text-blue-400 mr-2">></span> 
+                    Qualification du prospect : <span className="text-accent-500">Rénovation complète requise</span>
+                  </p>
+                  <div className="mt-3 h-1 w-full bg-slate-700 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-500 w-3/4 animate-[shimmer_2s_infinite]"></div>
+                  </div>
               </div>
            </div>
            
-           {/* Badge de réassurance flottant */}
-           <div className="absolute -top-4 -right-4 bg-accent-600 text-white p-4 rounded-full shadow-xl hidden sm:flex flex-col items-center justify-center w-20 h-20 transform -rotate-12">
-              <span className="text-[10px] font-bold uppercase leading-none">Gain de</span>
-              <span className="text-xl font-black">75%</span>
-              <span className="text-[10px] font-bold uppercase leading-none">Temps</span>
+           {/* Badge de réassurance flottant (Gain de temps) */}
+           <div className="absolute -top-6 -right-6 bg-accent-600 text-white p-5 rounded-full shadow-2xl flex flex-col items-center justify-center w-24 h-24 transform -rotate-12 z-20 border-4 border-slate-50 dark:border-slate-950">
+              <span className="text-[10px] font-bold uppercase leading-none mb-1">Libérez</span>
+              <span className="text-2xl font-black">10H</span>
+              <span className="text-[10px] font-bold uppercase leading-none mt-1">/ Semaine</span>
            </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
     </div>
   );
 };
