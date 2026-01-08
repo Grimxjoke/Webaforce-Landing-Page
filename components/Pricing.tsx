@@ -94,14 +94,14 @@ const Pricing: React.FC = () => {
               </div>
 
               <a
-                href="#contact"
+                href="tel:0939030564"
                 className={`mt-10 block w-full py-4 px-6 rounded text-center font-black uppercase tracking-widest transition-all ${
                   sol.highlight
                     ? 'bg-accent-600 text-white hover:bg-accent-700'
                     : 'bg-slate-900 dark:bg-slate-700 text-white hover:bg-slate-800'
                 }`}
               >
-                Demander plus d'infos
+                Appeler un expert
               </a>
             </div>
           ))}

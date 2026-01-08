@@ -48,10 +48,10 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
               </button>
 
               <a
-                href="#contact"
+                href="tel:0939030564"
                 className="bg-accent-600 hover:bg-accent-700 text-white px-6 py-2.5 rounded shadow-md hover:shadow-lg transition-all font-bold uppercase text-sm tracking-wider"
               >
-                Demander un devis
+                Appeler pour un devis
               </a>
             </div>
           </div>
@@ -88,11 +88,11 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="tel:0939030564"
               onClick={() => setIsOpen(false)}
               className="bg-accent-600 text-white block px-4 py-3 rounded font-bold text-center uppercase shadow-md"
             >
-              Contactez-nous
+              Appeler Directement
             </a>
           </div>
         </div>

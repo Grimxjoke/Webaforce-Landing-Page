@@ -8,7 +8,6 @@ const Services = lazy(() => import('./components/Services'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const AIDemo = lazy(() => import('./components/AIDemo'));
 const Pricing = lazy(() => import('./components/Pricing'));
-const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -20,6 +19,7 @@ function App() {
       document.documentElement.classList.add('dark');
     } else {
       setIsDark(false);
+      document.documentElement.classList.remove('remove'); // Note: previously 'remove' was actually 'remove' but logic should be consistent
       document.documentElement.classList.remove('dark');
     }
   }, []);
@@ -50,7 +50,6 @@ function App() {
           <AIDemo />
           <Pricing />
           <FAQ />
-          <Contact />
         </Suspense>
       </main>
       <Footer />
