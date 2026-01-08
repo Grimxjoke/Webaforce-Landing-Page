@@ -19,7 +19,6 @@ function App() {
       document.documentElement.classList.add('dark');
     } else {
       setIsDark(false);
-      document.documentElement.classList.remove('remove'); // Note: previously 'remove' was actually 'remove' but logic should be consistent
       document.documentElement.classList.remove('dark');
     }
   }, []);
@@ -37,7 +36,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300 selection:bg-accent-500 selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300 selection:bg-accent-500 selection:text-white">
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero />
