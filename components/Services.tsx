@@ -1,37 +1,32 @@
 import React from 'react';
-import { MapPin, PhoneCall, Search, Star, MessageSquare, CheckCircle } from 'lucide-react';
+import { MapPin, PhoneCall, Search, Star, CheckCircle } from 'lucide-react';
 import { ServiceFeature } from '../types';
 
 const features: ServiceFeature[] = [
   {
     title: "Classement Top 3 Maps",
-    description: "90% des recherches locales s'arrêtent au Top 3. Nous optimisons votre profil Google pour que vous soyez l'entreprise que les clients voient en premier.",
+    description: "80% des recherches locales s'arrêtent au Top 3 de Google Maps. Nous optimisons votre profil pour que vous soyez l'entreprise que les clients voient et appellent en premier.",
     icon: MapPin
   },
   {
-    title: "Audit Digital Complet",
-    description: "Nous analysons l'image que vous renvoyez en ligne : cohérence Google Business vs Site Web. Un audit gratuit pour identifier vos leviers de croissance.",
-    icon: Search
-  },
-  {
     title: "Réceptionniste IA 24h/7j",
-    description: "Éliminez le 'Dark Funnel'. Quand vous ne décrochez pas, l'IA le fait pour vous, qualifie le besoin et prend le RDV. Plus aucun lead ne part chez le concurrent.",
+    description: "Quand vous êtes sur un chantier, l'IA décroche pour vous. Elle qualifie le projet (type de toiture, urgence fuite) et prend les coordonnées. Ne laissez plus vos clients appeler ailleurs.",
     icon: PhoneCall
   },
   {
-    title: "Essai IA Gratuit",
-    description: "Testez notre agent vocal sur votre ligne actuelle pendant 7 jours sans frais. Constatez par vous-même l'efficacité de la capture de leads automatique.",
+    title: "Audit Digital Complet",
+    description: "Nous analysons l'état de votre image numérique : comparaison entre votre profil Google Business et votre page web pour corriger ce qui bloque votre visibilité.",
+    icon: Search
+  },
+  {
+    title: "Essai Gratuit 2 Semaines",
+    description: "Testez notre réceptionniste IA sur votre ligne actuelle pendant 14 jours sans aucun frais. Constatez par vous-même comment il capture vos appels quand vous travaillez.",
     icon: CheckCircle
   },
   {
-    title: "Gestion d'Avis Automatisée",
-    description: "Le classement Maps dépend de vos avis. Nous automatisons la demande d'avis 5 étoiles auprès de vos clients pour booster votre réputation.",
+    title: "Gestion d'Avis Clients",
+    description: "Les avis sont le moteur du classement Google Maps. Nous automatisons la demande d'avis 5 étoiles auprès de vos clients satisfaits pour bétonner votre réputation.",
     icon: Star
-  },
-  {
-    title: "Speed-to-Lead SMS",
-    description: "Si vous manquez un appel, l'IA envoie instantanément un SMS pour engager le prospect. Un client à qui l'on répond tout de suite est un client gagné.",
-    icon: MessageSquare
   }
 ];
 
@@ -40,13 +35,13 @@ const Services: React.FC = () => {
     <section id="services" className="py-24 bg-white dark:bg-slate-950 scroll-mt-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <h2 className="text-accent-600 font-black uppercase tracking-widest text-sm">Spécialiste Toiture & Charpente</h2>
+          <h2 className="text-accent-600 font-black uppercase tracking-widest text-sm">Pack Domination Locale</h2>
           <p className="mt-2 text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">
-            Visibilité Local Pack, <br/>
-            <span className="text-slate-400 dark:text-slate-600">Réponse garantie.</span>
+            Visibilité Google Maps <br/>
+            <span className="text-slate-400 dark:text-slate-600">& Zéro Appel Perdu.</span>
           </p>
           <p className="mt-6 text-xl text-slate-600 dark:text-slate-400 font-medium">
-            Nous transformons votre présence en ligne pour que vous n'ayez plus à chercher de chantiers : ils viendront à vous.
+            Nous faisons de vous le couvreur le plus visible de votre ville et nous nous assurons qu'aucun prospect ne tombe sur votre messagerie.
           </p>
         </div>
 

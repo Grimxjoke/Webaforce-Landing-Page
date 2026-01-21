@@ -17,12 +17,12 @@ const AIDemo: React.FC = () => {
         <div className="text-center mb-12">
              <div className="inline-flex items-center gap-2 mb-2 px-4 py-1 rounded-full bg-accent-100 dark:bg-accent-900/30 border border-accent-500/30">
                 <Shield className="text-accent-600 dark:text-accent-400 h-4 w-4" />
-                <span className="text-accent-700 dark:text-accent-400 font-semibold uppercase tracking-wider text-xs">Essai Gratuit Disponible</span>
+                <span className="text-accent-700 dark:text-accent-400 font-semibold uppercase tracking-wider text-xs">Essai Gratuit 2 Semaines</span>
             </div>
             <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl transition-colors duration-300 uppercase">
-              Éliminez le <span className="text-accent-600">Dark Funnel</span>
+              Ne perdez plus <span className="text-accent-600">aucun prospect</span>
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 mt-2 transition-colors duration-300">Testez notre ligne de démonstration ou lancez votre essai gratuit de 7 jours.</p>
+            <p className="text-slate-600 dark:text-slate-400 mt-2 transition-colors duration-300 font-medium">Testez notre ligne de démonstration ou lancez votre essai gratuit de 14 jours.</p>
         </div>
 
         <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-stretch">
@@ -32,9 +32,9 @@ const AIDemo: React.FC = () => {
                 <div className="flex items-center justify-center h-20 w-20 rounded-full bg-accent-100 dark:bg-accent-600/20 text-accent-600 mx-auto mb-6">
                     <Phone className="h-10 w-10" />
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 dark:text-white text-center mb-4 uppercase tracking-tight">Ligne Démo IA</h3>
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white text-center mb-4 uppercase tracking-tight">Standard IA Démo</h3>
                 <p className="text-slate-600 dark:text-slate-400 text-center text-lg mb-8 font-medium">
-                    Appelez pour voir comment l'IA qualifie une demande de toiture ardoise ou une urgence fuite en quelques secondes.
+                    Appelez pour tester. L'IA demande le type de toiture, la ville et l'urgence des travaux.
                 </p>
                 
                 <div className="bg-slate-50 dark:bg-slate-950 border-2 border-dashed border-accent-600/30 rounded-xl p-6 text-center mb-6">
@@ -45,7 +45,7 @@ const AIDemo: React.FC = () => {
                 </div>
 
                 <a href="#contact" className="text-center py-3 bg-accent-600 text-white font-bold rounded uppercase tracking-widest hover:bg-accent-700 transition-colors">
-                    Démarrer mon essai gratuit
+                    Démarrer mes 14 jours d'essai
                 </a>
              </div>
           </div>
@@ -59,7 +59,7 @@ const AIDemo: React.FC = () => {
                       </div>
                       <div className="ml-4">
                         <p className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight">Audit de Visibilité</p>
-                        <p className="text-sm text-slate-500 dark:text-slate-400 font-bold">Analyse Google Maps & Web</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400 font-bold uppercase">Google Maps + Web</p>
                       </div>
                   </div>
                 </div>
@@ -69,11 +69,11 @@ const AIDemo: React.FC = () => {
                         <Sparkles className="h-12 w-12 text-accent-600" />
                     </div>
                     <div>
-                        <h4 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4">Où en est votre entreprise ?</h4>
+                        <h4 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4">Analyse de votre visibilité</h4>
                         <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-md mx-auto font-medium">
-                            Nous réalisons une recherche réelle sur votre secteur pour vous montrer votre position actuelle et celle de vos concurrents dans le Local Pack.
+                            Nous analysons l'état de votre fiche Google par rapport à vos concurrents et la cohérence de vos informations sur le web.
                             <br/><br/>
-                            <span className="text-accent-600 font-bold">Contactez-nous via le formulaire ci-dessous pour recevoir votre rapport PDF gratuit.</span>
+                            <span className="text-accent-600 font-bold uppercase">Recevez votre rapport PDF gratuit sous 24h.</span>
                         </p>
                     </div>
                 </div>

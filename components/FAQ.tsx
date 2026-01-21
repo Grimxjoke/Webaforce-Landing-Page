@@ -8,24 +8,24 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "Qu'est-ce que le 'Local Pack' de Google Maps ?",
-    answer: "C'est l'encadré qui affiche les 3 meilleures entreprises locales en haut des résultats de recherche Google. Être dans le Top 3 garantit environ 90% des clics des clients qui cherchent un couvreur dans votre ville."
+    question: "C'est quoi le 'Top 3 Maps' de Google ?",
+    answer: "C'est l'encadré qui affiche les 3 meilleurs artisans en haut de Google quand quelqu'un cherche 'Couvreur + votre ville'. 80% des clients appellent l'un de ces 3 résultats. Notre but est de vous y placer."
   },
   {
-    question: "Comment fonctionne l'essai gratuit de l'IA ?",
-    answer: "Nous installons un numéro de transfert. Si vous ne décrochez pas après 3 sonneries, notre agent IA prend l'appel, répond aux questions du client et vous envoie un résumé par SMS/Email avec les coordonnées. Vous testez cela gratuitement pendant 7 jours."
+    question: "Comment fonctionne l'essai gratuit de 2 semaines ?",
+    answer: "Nous mettons en place un système simple : si vous ne décrochez pas votre téléphone (sur un chantier ou en rendez-vous), notre Réceptionniste IA prend l'appel à votre place. Vous testez cela gratuitement pendant 14 jours pour voir tous les leads que vous récupérez."
   },
   {
-    question: "C'est quoi le 'Dark Funnel' ?",
-    answer: "C'est le phénomène où vous perdez des clients potentiels simplement parce que vous étiez occupé sur un chantier quand ils ont appelé. Un prospect qui tombe sur une messagerie appelle immédiatement votre concurrent. L'IA élimine ce trou dans votre chiffre d'affaires."
+    question: "Pourquoi est-ce que je perds des clients ?",
+    answer: "Parce que quand un prospect appelle un couvreur pour une urgence ou un devis et tombe sur une messagerie, il n'attend pas : il appelle immédiatement le concurrent suivant sur la liste. L'IA empêche cela en répondant instantanément."
   },
   {
-    question: "Garantissez-vous la position Top 3 ?",
-    answer: "Chaque zone géographique est différente. Notre audit gratuit nous permet de vous dire exactement si nous pouvons vous garantir le Top 3. Dans la majorité des cas, nos optimisations SEO Local portent leurs fruits sous 30 à 60 jours."
+    question: "Que contient l'audit gratuit ?",
+    answer: "Nous comparons votre profil Google Business avec votre page web. Nous vérifions si vos informations sont à jour partout sur le web et si votre site est optimisé pour transformer les visiteurs en appels. Vous recevez un rapport PDF clair."
   },
   {
-    question: "Dois-je changer de numéro de téléphone ?",
-    answer: "Non. Nous utilisons un système de transfert d'appel intelligent. Vous gardez votre numéro actuel, l'IA ne s'active que si vous ne pouvez pas répondre."
+    question: "Dois-je changer mon numéro ?",
+    answer: "Non. Vous gardez votre numéro de téléphone habituel. Le transfert vers l'IA ne se fait que si vous ne répondez pas."
   }
 ];
 
@@ -47,7 +47,7 @@ const FAQ: React.FC = () => {
             Questions Fréquentes
           </h2>
           <p className="mt-4 text-xl text-slate-600 dark:text-slate-400 transition-colors duration-300">
-            Comprendre comment nous boostons votre carnet de commandes.
+            Comprendre comment booster votre entreprise.
           </p>
         </div>
 

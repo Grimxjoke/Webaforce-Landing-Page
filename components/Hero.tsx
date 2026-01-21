@@ -10,11 +10,12 @@ const Hero: React.FC = () => {
             Spécialiste Couvreurs & Charpentiers
           </div>
           <h1 className="text-4xl tracking-tight font-black text-slate-900 dark:text-white sm:text-5xl md:text-6xl leading-[1.1] transition-colors duration-300 uppercase">
-            Dominez le <span className="text-accent-600">Top 3 Google Maps</span> <br/>
-            & sécurisez vos appels.
+            Soyez le premier <br/>
+            <span className="text-accent-600">Couvreur appelé</span> <br/>
+            sur Google Maps.
           </h1>
           <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
-            9 personnes sur 10 cliquent sur les 3 premiers résultats Maps. Nous vous y installons. Et quand vous êtes sur le toit, notre <span className="font-bold text-slate-900 dark:text-white">Réceptionniste IA</span> décroche : zéro prospect perdu, essai gratuit disponible.
+            80% des clients cliquent sur les 3 premiers résultats Maps. Nous vous y installons. Et quand vous êtes sur le toit, notre <span className="font-bold text-slate-900 dark:text-white">Réceptionniste IA</span> décroche pour vous : ne laissez plus vos prospects appeler vos concurrents.
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
@@ -29,14 +30,14 @@ const Hero: React.FC = () => {
               href="#demo"
               className="flex items-center justify-center px-8 py-4 border-2 border-slate-300 dark:border-slate-700 text-base font-bold rounded text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all uppercase tracking-wider"
             >
-              Essayer l'IA Vocal
+              Essai Gratuit 2 Semaines
             </a>
           </div>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm font-bold text-slate-600 dark:text-slate-400">
             <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <MapPin className="h-5 w-5 text-accent-600" />
-                <span>N°1 Google Maps</span>
+                <span>Top 3 Google Pack</span>
             </div>
             <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <PhoneForwarded className="h-5 w-5 text-accent-600" />
@@ -44,32 +45,31 @@ const Hero: React.FC = () => {
             </div>
             <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <BarChart3 className="h-5 w-5 text-accent-600" />
-                <span>Audit PDF Offert</span>
+                <span>Audit de Visibilité Offert</span>
             </div>
           </div>
         </div>
 
-        {/* Hero Image - Photo Officielle */}
+        {/* Hero Image */}
         <div className="lg:w-1/2 relative group">
            <div className="relative rounded-2xl shadow-2xl overflow-hidden border-4 border-white dark:border-slate-800 transition-all duration-700 bg-slate-900">
               <img 
                 src="https://storage.googleapis.com/msgsndr/Vgeb2do8weO0FdB77r5v/media/695ff046fface13a472aaac6.png" 
-                alt="Interface IA WEBAFORCE pour couvreurs" 
+                alt="Artisan couvreur utilisant WEBAFORCE" 
                 className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60"></div>
            </div>
            
-           {/* Badge SEO */}
            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 z-20 hidden md:block animate-bounce-slow">
               <div className="flex items-center gap-3">
                  <div className="bg-green-100 dark:bg-green-900/30 p-2 rounded-full">
                     <TrendingUpIcon className="h-6 w-6 text-green-600" />
                  </div>
                  <div>
-                    <p className="text-[10px] uppercase font-black text-slate-500">Local Pack</p>
-                    <p className="text-xl font-black text-slate-900 dark:text-white uppercase">TOP 3 GOOGLE</p>
+                    <p className="text-[10px] uppercase font-black text-slate-500">Visibilité</p>
+                    <p className="text-xl font-black text-slate-900 dark:text-white uppercase">TOP 3 MAPS</p>
                  </div>
               </div>
            </div>

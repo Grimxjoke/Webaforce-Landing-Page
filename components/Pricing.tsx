@@ -4,41 +4,39 @@ import { Check, ShieldCheck, Map, Phone } from 'lucide-react';
 const solutions = [
   {
     name: 'Pack Visibilité',
-    description: "L'essentiel pour apparaître là où vos clients vous cherchent.",
+    description: "L'essentiel pour être vu par vos clients locaux.",
     features: [
-      'Audit complet de visibilité digitale',
-      'Optimisation Fiche Google Business',
-      'Stratégie de mots-clés locaux',
-      'Nettoyage des citations web',
-      'Rapport mensuel de positionnement'
+      'Audit complet fiche Google & Web',
+      'Optimisation Profil Business',
+      'Stratégie mots-clés (Couvreur, Toiture)',
+      'Correction des citations web',
+      'Suivi mensuel de positionnement'
     ],
     highlight: false,
     icon: Map
   },
   {
     name: 'Pack Performance',
-    description: "Dominez votre secteur et capturez chaque opportunité.",
+    description: "Visibilité maximale et capture de leads 24h/7j.",
     features: [
       'Tout du Pack Visibilité',
       'Réceptionniste IA (24h/7j)',
-      'Placement garanti Top 3 Local Pack*',
-      'Relance SMS automatique sur appels manqués',
-      'Essai gratuit 7 jours inclus',
-      'Gestion automatisée des avis Google'
+      'Placement Local Pack Top 3',
+      'Essai gratuit 2 semaines IA',
+      'Collecte automatique avis clients'
     ],
     highlight: true,
     icon: ShieldCheck
   },
   {
     name: 'Pack Domination',
-    description: "Pour les entreprises de toiture qui veulent verrouiller leur marché.",
+    description: "Pour verrouiller le marché de votre région.",
     features: [
       'Tout du Pack Performance',
-      'Campagnes Google Ads locales ciblées',
-      'Multi-fiches Google (selon éligibilité)',
-      'Intégration CRM métier complète',
-      'Suivi stratégique bi-mensuel',
-      'Support VIP prioritaire'
+      'Publicité Google Ads Locales',
+      'Multi-fiches Google (selon secteur)',
+      'Rapport de performance hebdomadaire',
+      'Support technique prioritaire'
     ],
     highlight: false,
     icon: Phone
@@ -51,10 +49,10 @@ const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
-            Nos Solutions de Croissance
+            Nos Solutions Couvreurs
           </h2>
           <p className="mt-4 text-xl text-slate-600 dark:text-slate-400 font-medium">
-            Des résultats mesurables : plus de visibilité, plus d'appels, plus de chantiers.
+            Des résultats concrets : plus de visibilité et aucun appel manqué.
           </p>
         </div>
         
@@ -64,16 +62,10 @@ const Pricing: React.FC = () => {
               key={sol.name}
               className={`relative p-10 bg-white dark:bg-slate-800 rounded border-2 flex flex-col transition-all ${
                 sol.highlight
-                  ? 'border-accent-600 shadow-xl shadow-accent-600/10 scale-105 z-10'
+                  ? 'border-accent-600 shadow-xl scale-105 z-10'
                   : 'border-transparent shadow-md'
               }`}
             >
-              {sol.highlight && (
-                 <div className="absolute top-0 py-1 px-4 bg-accent-600 rounded-full transform -translate-y-1/2 left-1/2 -translate-x-1/2 text-xs font-black text-white uppercase tracking-widest shadow-lg">
-                    Populaire
-                 </div>
-              )}
-              
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
                     <sol.icon className="h-6 w-6 text-accent-600" />
@@ -93,7 +85,7 @@ const Pricing: React.FC = () => {
                       <div className="flex-shrink-0 mt-1">
                         <Check className="h-4 w-4 text-accent-600" aria-hidden="true" />
                       </div>
-                      <span className="ml-3 text-sm font-bold text-slate-700 dark:text-slate-300 leading-tight">{feature}</span>
+                      <span className="ml-3 text-sm font-bold text-slate-700 dark:text-slate-300 leading-tight uppercase tracking-tight">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -107,17 +99,10 @@ const Pricing: React.FC = () => {
                     : 'bg-slate-900 dark:bg-slate-700 text-white hover:bg-slate-800'
                 }`}
               >
-                Demander un devis
+                Devis & Audit Gratuit
               </a>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-16 flex flex-col items-center justify-center p-8 bg-white dark:bg-slate-800 rounded border border-dashed border-slate-300 dark:border-slate-700">
-            <p className="text-center font-bold text-slate-900 dark:text-white uppercase tracking-tight">
-                *Engagement sur résultats : <br/>
-                <span className="text-slate-500 font-medium normal-case italic">Notre accompagnement Performance inclut une garantie de progression de votre visibilité locale sous 90 jours.</span>
-            </p>
         </div>
       </div>
     </section>
