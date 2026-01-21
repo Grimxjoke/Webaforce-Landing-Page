@@ -1,37 +1,37 @@
 import React from 'react';
-import { MessageSquare, RefreshCw, Smartphone, PhoneMissed, MapPin, ClipboardCheck } from 'lucide-react';
+import { MapPin, PhoneCall, Search, Star, Smartphone, ShieldCheck } from 'lucide-react';
 import { ServiceFeature } from '../types';
 
 const features: ServiceFeature[] = [
   {
-    title: "Relance sur Appels Manqués",
-    description: "Vous êtes sur une échelle et vous ne pouvez pas répondre ? Notre système détecte l'appel manqué et envoie instantanément un SMS personnalisé à votre prospect pour fixer un rendez-vous avant qu'il n'appelle un autre couvreur.",
-    icon: PhoneMissed
-  },
-  {
-    title: "Secrétariat IA 24h/24",
-    description: "Un agent vocal intelligent qui décroche à votre place, même le soir et le week-end. Il qualifie le type de travaux (fuite, rénovation, charpente), prend les coordonnées et enregistre la demande dans votre interface.",
-    icon: Smartphone
-  },
-  {
-    title: "Réactivation des Devis en Attente",
-    description: "Vous avez des devis envoyés qui dorment ? Notre automate relance poliment vos clients par SMS ou Email pour valider le chantier, sans que vous ayez à passer un seul coup de fil de relance.",
-    icon: RefreshCw
-  },
-  {
-    title: "Prise de RDV Chantier",
-    description: "L'IA accède à vos disponibilités et cale directement vos rendez-vous de métrage ou de visite technique dans votre agenda. Elle gère aussi les confirmations pour éviter les déplacements inutiles.",
-    icon: ClipboardCheck
-  },
-  {
-    title: "Référencement Local & Avis",
-    description: "Boostez votre visibilité sur Google Maps. Nous automatisons la demande d'avis positifs auprès de vos clients satisfaits après chaque fin de chantier pour vous assurer de rester le N°1 de votre secteur.",
+    title: "Domination Google Maps",
+    description: "Nous optimisons votre profil Business pour vous propulser dans le Top 3 du Local Pack. C'est là que 90% de vos futurs clients se trouvent quand ils cherchent un couvreur.",
     icon: MapPin
   },
   {
-    title: "Standard Centralisé",
-    description: "Retrouvez tous vos messages (SMS, WhatsApp, appels, Facebook) au même endroit. Ne perdez plus aucune information client, tout est archivé et facile à retrouver pour vos futurs chantiers.",
-    icon: MessageSquare
+    title: "Réceptionniste IA 24h/7j",
+    description: "Fini le 'Dark Funnel'. Notre IA décroche quand vous travaillez ou dormez. Elle qualifie le projet et prend les coordonnées. Un prospect qui a une réponse immédiate n'appelle pas la concurrence.",
+    icon: PhoneCall
+  },
+  {
+    title: "Audit de Visibilité Digital",
+    description: "Nous analysons l'état de votre image numérique : cohérence entre votre fiche Google et votre site web. Un audit complet pour identifier vos points faibles face aux concurrents.",
+    icon: Search
+  },
+  {
+    title: "Gestion de Réputation Auto",
+    description: "Le Local Pack adore les avis. Nous automatisons la récolte d'avis 5 étoiles auprès de vos clients satisfaits pour bétonner votre crédibilité et votre classement.",
+    icon: Star
+  },
+  {
+    title: "Speed-to-Lead SMS",
+    description: "Si vous manquez un appel, l'IA envoie instantanément un SMS pour engager la conversation. Répondre en moins d'une minute multiplie par 7 vos chances de conversion.",
+    icon: Smartphone
+  },
+  {
+    title: "Essai Gratuit Réceptionniste",
+    description: "Testez notre agent vocal sans aucun frais. Voyez par vous-même comment il gère vos prospects avant de vous engager. La preuve par les résultats.",
+    icon: ShieldCheck
   }
 ];
 
@@ -40,13 +40,13 @@ const Services: React.FC = () => {
     <section id="services" className="py-24 bg-white dark:bg-slate-950 scroll-mt-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <h2 className="text-accent-600 font-black uppercase tracking-widest text-sm">Outils de Croissance</h2>
+          <h2 className="text-accent-600 font-black uppercase tracking-widest text-sm">Le Pack Domination Locale</h2>
           <p className="mt-2 text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">
-            Gagnez du temps sur l'administratif, <br/>
-            <span className="text-slate-400 dark:text-slate-600">Gagnez de l'argent sur le toit.</span>
+            Visibilité maximale, <br/>
+            <span className="text-slate-400 dark:text-slate-600">Réponse immédiate.</span>
           </p>
           <p className="mt-6 text-xl text-slate-600 dark:text-slate-400 font-medium">
-            Nous avons conçu nos solutions spécifiquement pour répondre aux contraintes des métiers du bâtiment.
+            Nous combinons le SEO local et l'Intelligence Artificielle pour que vous soyez l'entreprise la plus visible et la plus réactive de votre région.
           </p>
         </div>
 

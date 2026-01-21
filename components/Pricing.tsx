@@ -1,44 +1,47 @@
 import React from 'react';
-import { Check, ShieldCheck } from 'lucide-react';
+import { Check, ShieldCheck, Map, Phone } from 'lucide-react';
 
 const solutions = [
   {
-    name: 'Solution Artisans',
-    description: "L'essentiel pour ne plus rater d'appels et professionnaliser votre accueil.",
+    name: 'Pack Visibilité',
+    description: "L'essentiel pour apparaître là où vos clients vous cherchent.",
     features: [
+      'Audit complet de visibilité digitale',
+      'Optimisation Fiche Google Business',
+      'Stratégie de mots-clés locaux',
+      'Nettoyage des citations web',
+      'Rapport mensuel de positionnement'
+    ],
+    highlight: false,
+    icon: Map
+  },
+  {
+    name: 'Pack Performance',
+    description: "Dominez votre secteur et capturez chaque opportunité.",
+    features: [
+      'Tout du Pack Visibilité',
+      'Réceptionniste IA (24h/7j)',
+      'Placement garanti Top 3 Local Pack*',
       'Relance SMS automatique sur appels manqués',
-      'Réactivation de votre base de données clients',
-      'Gestion centralisée des messages (SMS/WhatsApp)',
-      'Installation du Chatbot IA sur votre site',
-      'Accès à l\'application mobile de gestion'
+      'Essai gratuit 7 jours inclus',
+      'Gestion automatisée des avis Google'
     ],
-    highlight: false
+    highlight: true,
+    icon: ShieldCheck
   },
   {
-    name: 'Solution Performance',
-    description: "Le système complet pour déléguer totalement la prise de rendez-vous.",
+    name: 'Pack Domination',
+    description: "Pour les entreprises de toiture qui veulent verrouiller leur marché.",
     features: [
-      'Tout de la Solution Artisans',
-      'Agent Vocal IA (Répond au téléphone 24/7)',
-      'Qualification complète des projets travaux',
-      'Synchronisation avec votre agenda pro',
-      'Relances automatiques des devis non signés',
-      'Demandes d\'avis Google automatisées'
+      'Tout du Pack Performance',
+      'Campagnes Google Ads locales ciblées',
+      'Multi-fiches Google (selon éligibilité)',
+      'Intégration CRM métier complète',
+      'Suivi stratégique bi-mensuel',
+      'Support VIP prioritaire'
     ],
-    highlight: true
-  },
-  {
-    name: 'Sur-Mesure / Multi-Équipes',
-    description: "Pour les entreprises de couverture structurées avec plusieurs équipes.",
-    features: [
-      'Tout de la Solution Performance',
-      'Gestion multi-numéros / multi-agences',
-      'Intégration CRM métier avancée',
-      'Rapports de performance détaillés par équipe',
-      'Accompagnement stratégique dédié',
-      'Support prioritaire 7j/7'
-    ],
-    highlight: false
+    highlight: false,
+    icon: Phone
   }
 ];
 
@@ -48,10 +51,10 @@ const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
-            Nos Accompagnements
+            Nos Solutions de Croissance
           </h2>
           <p className="mt-4 text-xl text-slate-600 dark:text-slate-400 font-medium">
-            Pas d'abonnement caché, juste des solutions concrètes pour développer votre entreprise.
+            Des résultats mesurables : plus de visibilité, plus d'appels, plus de chantiers.
           </p>
         </div>
         
@@ -67,14 +70,17 @@ const Pricing: React.FC = () => {
             >
               {sol.highlight && (
                  <div className="absolute top-0 py-1 px-4 bg-accent-600 rounded-full transform -translate-y-1/2 left-1/2 -translate-x-1/2 text-xs font-black text-white uppercase tracking-widest shadow-lg">
-                    Recommandé
+                    Populaire
                  </div>
               )}
               
               <div className="flex-1">
-                <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
-                    {sol.name}
-                </h3>
+                <div className="flex items-center gap-3 mb-4">
+                    <sol.icon className="h-6 w-6 text-accent-600" />
+                    <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
+                        {sol.name}
+                    </h3>
+                </div>
                 <p className="mt-4 text-slate-600 dark:text-slate-400 font-medium italic">
                     {sol.description}
                 </p>
@@ -94,24 +100,23 @@ const Pricing: React.FC = () => {
               </div>
 
               <a
-                href="tel:0939030564"
+                href="#contact"
                 className={`mt-10 block w-full py-4 px-6 rounded text-center font-black uppercase tracking-widest transition-all ${
                   sol.highlight
                     ? 'bg-accent-600 text-white hover:bg-accent-700'
                     : 'bg-slate-900 dark:bg-slate-700 text-white hover:bg-slate-800'
                 }`}
               >
-                Appeler un expert
+                Demander un devis
               </a>
             </div>
           ))}
         </div>
         
         <div className="mt-16 flex flex-col items-center justify-center p-8 bg-white dark:bg-slate-800 rounded border border-dashed border-slate-300 dark:border-slate-700">
-            <ShieldCheck className="h-10 w-10 text-accent-600 mb-4" />
             <p className="text-center font-bold text-slate-900 dark:text-white uppercase tracking-tight">
-                Installation garantie en moins de 10 jours <br/>
-                <span className="text-slate-500 font-medium normal-case">Sans engagement de durée. Vous restez maître de votre entreprise.</span>
+                *Engagement sur résultats : <br/>
+                <span className="text-slate-500 font-medium normal-case italic">Notre accompagnement Performance inclut une garantie de progression de votre visibilité locale sous 90 jours.</span>
             </p>
         </div>
       </div>

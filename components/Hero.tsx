@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
+import { ArrowRight, MapPin, PhoneForwarded, BarChart3 } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -7,45 +7,44 @@ const Hero: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
         <div className="text-center lg:text-left lg:w-1/2">
           <div className="inline-flex items-center px-4 py-1.5 rounded bg-accent-600/10 border border-accent-600/20 text-accent-700 dark:text-accent-500 text-sm font-bold tracking-widest uppercase mb-6">
-            L'Artisanat de demain, aujourd'hui
+            Spécialiste Couvreurs & Charpentiers
           </div>
           <h1 className="text-4xl tracking-tight font-black text-slate-900 dark:text-white sm:text-5xl md:text-6xl leading-[1.1] transition-colors duration-300 uppercase">
-            La force de l'IA <br/>
-            <span className="text-accent-600">sur chaque chantier.</span>
+            Intégrez le <span className="text-accent-600">Top 3 Google Maps</span> <br/>
+            & ne ratez plus aucun appel.
           </h1>
           <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
-            Gagnez 10h par semaine. WEBAFORCE automatise votre accueil, qualifie vos projets et remplit votre carnet de commandes. Laissez l'IA gérer l'administratif, gardez les mains sur les outils.
+            9 clients sur 10 cliquent sur les 3 premiers résultats. Nous vous y installons. Et quand vous êtes sur le toit, notre <span className="font-bold text-slate-900 dark:text-white">Réceptionniste IA</span> décroche pour vous : plus aucun prospect perdu, plus de "Dark Funnel".
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
             <a
-              href="tel:0939030564"
+              href="#contact"
               className="flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded bg-accent-600 hover:bg-accent-700 text-white transition-all shadow-lg uppercase tracking-wider group"
             >
-              Appeler pour un Audit
+              Mon Audit Gratuit
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#demo"
               className="flex items-center justify-center px-8 py-4 border-2 border-slate-300 dark:border-slate-700 text-base font-bold rounded text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all uppercase tracking-wider"
             >
-              <Phone className="mr-2 h-5 w-5 text-accent-600" />
-              Tester la démo
+              Essai Gratuit IA
             </a>
           </div>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm font-bold text-slate-600 dark:text-slate-400">
             <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="h-5 w-5 text-accent-600" />
-                <span>Expertise Bâtiment</span>
+                <MapPin className="h-5 w-5 text-accent-600" />
+                <span>N°1 Local</span>
             </div>
             <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="h-5 w-5 text-accent-600" />
-                <span>Gain de CA immédiat</span>
+                <PhoneForwarded className="h-5 w-5 text-accent-600" />
+                <span>Zéro Appels Perdus</span>
             </div>
             <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="h-5 w-5 text-accent-600" />
-                <span>Support 7j/7</span>
+                <BarChart3 className="h-5 w-5 text-accent-600" />
+                <span>Audit Offert</span>
             </div>
           </div>
         </div>
@@ -55,25 +54,34 @@ const Hero: React.FC = () => {
            <div className="relative rounded-2xl shadow-2xl overflow-hidden border-4 border-white dark:border-slate-800 transition-all duration-700 bg-slate-900">
               <img 
                 src="https://storage.googleapis.com/msgsndr/Vgeb2do8weO0FdB77r5v/media/695ff046fface13a472aaac6.png" 
-                alt="Charpentier utilisant l'interface IA WEBAFORCE sur un chantier" 
+                alt="Charpentier utilisant WEBAFORCE" 
                 className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
                 loading="eager"
               />
-              
-              {/* Overlay subtil pour le contraste */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60"></div>
            </div>
            
-           {/* Badge flottant Gain de temps */}
-           <div className="absolute -top-6 -right-6 bg-accent-600 text-white p-6 rounded-full shadow-2xl flex flex-col items-center justify-center w-28 h-28 transform -rotate-12 z-20 border-4 border-slate-50 dark:border-slate-950">
-              <span className="text-[10px] font-bold uppercase leading-none mb-1">Gagnez</span>
-              <span className="text-3xl font-black">10H</span>
-              <span className="text-[10px] font-bold uppercase leading-none mt-1">/ Semaine</span>
+           {/* Badge SEO */}
+           <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 z-20 animate-bounce-slow">
+              <div className="flex items-center gap-3">
+                 <div className="bg-green-100 p-2 rounded-full">
+                    <TrendingUp className="h-6 w-6 text-green-600" />
+                 </div>
+                 <div>
+                    <p className="text-[10px] uppercase font-black text-slate-500">Position Google</p>
+                    <p className="text-xl font-black text-slate-900 dark:text-white uppercase">TOP 3 PACK</p>
+                 </div>
+              </div>
            </div>
         </div>
       </div>
     </div>
   );
 };
+
+// Simple icon for the badge
+const TrendingUp = ({className}: {className?: string}) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+);
 
 export default Hero;

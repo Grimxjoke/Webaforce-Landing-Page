@@ -1,6 +1,6 @@
-// Ce service simule une intelligence artificielle spécialisée pour les couvreurs
+// Ce service simule une intelligence artificielle spécialisée pour le SEO local et la téléphonie IA
 export const initializeChat = () => {
-  console.log("Simulation IA WEBAFORCE (Artisans) initialisée");
+  console.log("Simulation IA WEBAFORCE (SEO & Vocal) initialisée");
   return true;
 };
 
@@ -12,18 +12,18 @@ export const sendMessageToGemini = async (message: string): Promise<string> => {
       const lowerMsg = message.toLowerCase();
       let response = "";
 
-      if (lowerMsg.includes('prix') || lowerMsg.includes('tarif') || lowerMsg.includes('combien')) {
-        response = "Nos solutions sont adaptées à la taille de votre entreprise. Nous ne facturons pas au forfait mais à la performance générée. Pour un couvreur indépendant, le retour sur investissement est souvent visible dès le premier devis sauvé ! Souhaitez-vous un audit de vos appels manqués ?";
-      } else if (lowerMsg.includes('vocal') || lowerMsg.includes('téléphone')) {
-        response = "L'Agent Vocal est notre outil le plus puissant pour les couvreurs. Il décroche quand vous êtes sur le toit, qualifie l'urgence (fuite ou rénovation complète) et prend les coordonnées. Vous recevez un résumé par SMS immédiatement.";
-      } else if (lowerMsg.includes('rdv') || lowerMsg.includes('agenda')) {
-        response = "Je peux me synchroniser avec Google Calendar ou Outlook. Je propose uniquement vos créneaux libres pour les visites de métrage. Cela vous évite les allers-retours au téléphone pendant vos journées de travail.";
-      } else if (lowerMsg.includes('couverture') || lowerMsg.includes('toit') || lowerMsg.includes('charpente')) {
-        response = "Absolument, nous connaissons bien les spécificités de votre métier. Notre IA sait faire la différence entre une demande de nettoyage de toiture et une réfection complète de charpente.";
+      if (lowerMsg.includes('audit') || lowerMsg.includes('recherche') || lowerMsg.includes('analys')) {
+        response = "Notre audit de visibilité est gratuit. Il analyse votre fiche Google Business et votre site pour voir pourquoi vous n'êtes pas encore dans le Top 3. Voulez-vous que je vérifie votre ville ?";
+      } else if (lowerMsg.includes('maps') || lowerMsg.includes('pack') || lowerMsg.includes('local')) {
+        response = "Le Local Pack est l'encadré Google qui affiche les 3 meilleurs artisans. 9 clients sur 10 choisissent leur couvreur ici. Nous utilisons des techniques de SEO local pour vous y placer durablement.";
+      } else if (lowerMsg.includes('vocal') || lowerMsg.includes('réceptionniste') || lowerMsg.includes('perdu')) {
+        response = "Le 'Dark Funnel' arrive quand vous manquez un appel : le client appelle immédiatement votre concurrent. Notre Réceptionniste IA décroche en moins de 2 secondes, 24h/24, pour sécuriser le prospect.";
+      } else if (lowerMsg.includes('prix') || lowerMsg.includes('tarif')) {
+        response = "Nous proposons un audit gratuit et un essai gratuit de l'IA. Pour l'accompagnement SEO, nos tarifs dépendent de la concurrence dans votre zone géographique. C'est un investissement rapidement rentabilisé par les nouveaux chantiers.";
       } else if (lowerMsg.includes('bonjour') || lowerMsg.includes('salut')) {
-        response = "Bonjour ! Je suis l'assistant WEBAFORCE. Je suis là pour aider les couvreurs et charpentiers à ne plus rater aucun client. Comment puis-je vous aider aujourd'hui ?";
+        response = "Bonjour ! Je suis l'assistant WEBAFORCE. Je peux vous aider à intégrer le Top 3 Google Maps ou à tester notre réceptionniste IA. Que préférez-vous ?";
       } else {
-        response = "C'est un point important pour votre activité. Chez WEBAFORCE, on s'assure que chaque prospect qui cherche un couvreur dans votre secteur tombe sur vous et obtienne une réponse immédiate. On en discute par téléphone ?";
+        response = "C'est une excellente question pour votre visibilité locale. Chez WEBAFORCE, notre mission est simple : faire de vous le couvreur le plus appelé de votre secteur. On commence par un audit gratuit ?";
       }
 
       resolve(response);

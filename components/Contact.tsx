@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, ArrowRight, CheckCircle, AlertCircle, Search } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    message: ''
+    company: '',
+    auditRequested: true
   });
   const [errors, setErrors] = useState<{ phone?: string; email?: string }>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const currentYear = new Date().getFullYear();
 
-  // Regex pour valider un email standard
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // Regex pour valider un numéro français (mobile ou fixe, avec ou sans +33)
   const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
 
   const validate = () => {
@@ -22,12 +21,12 @@ const Contact: React.FC = () => {
     let isValid = true;
 
     if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Veuillez entrer une adresse email valide.";
+      newErrors.email = "Email invalide.";
       isValid = false;
     }
 
     if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = "Veuillez entrer un numéro de téléphone valide (ex: 06 12 34 56 78).";
+      newErrors.phone = "Numéro invalide.";
       isValid = false;
     }
 
@@ -38,16 +37,15 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      // Simulation d'envoi
       setIsSubmitted(true);
-      setFormData({ name: '', phone: '', email: '', message: '' });
-      setTimeout(() => setIsSubmitted(false), 5000); // Reset message après 5s
+      setFormData({ name: '', phone: '', email: '', company: '', auditRequested: true });
+      setTimeout(() => setIsSubmitted(false), 5000);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-    // Effacer l'erreur en cours de frappe
+    const value = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value;
+    setFormData({ ...formData, [e.target.id]: value });
     if (errors[e.target.id as keyof typeof errors]) {
       setErrors({ ...errors, [e.target.id]: undefined });
     }
@@ -58,158 +56,90 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-700 flex flex-col lg:flex-row min-h-[600px] transition-colors duration-300">
           
-          {/* Contact Info Section with Background Image */}
           <div className="lg:w-5/12 relative flex flex-col justify-between p-10 text-white overflow-hidden">
-            {/* Background Image Overlay */}
             <div className="absolute inset-0 z-0">
                 <img 
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
-                    srcSet="
-                      https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=400 400w, 
-                      https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800 800w
-                    "
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    alt="Connexion Mondiale" 
+                    src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800"
+                    alt="Toiture" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay"
-                    width="800"
-                    height="600"
-                    loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-900/90 to-slate-900/90 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 to-slate-900/90 mix-blend-multiply"></div>
             </div>
 
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-6 tracking-tight">Contactez WEBAFORCE</h3>
-              <p className="text-brand-100 mb-8 text-lg leading-relaxed">
-                Votre potentiel est illimité. Nos outils le sont aussi. Discutons de votre stratégie de domination dès aujourd'hui.
+              <h3 className="text-3xl font-black mb-6 tracking-tight uppercase">Audit & Devis Gratuit</h3>
+              <p className="text-slate-100 mb-8 text-lg leading-relaxed">
+                Obtenez une vision claire de votre positionnement sur Google Maps et découvrez comment l'IA peut sécuriser vos appels manqués.
               </p>
               
               <div className="space-y-8 mt-12">
                 <div className="flex items-center group cursor-pointer">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mr-4 group-hover:bg-brand-500 transition-colors">
-                    <Phone className="h-5 w-5 text-white" aria-hidden="true" />
+                  <div className="h-10 w-10 rounded-full bg-accent-600 flex items-center justify-center mr-4">
+                    <Phone className="h-5 w-5 text-white" />
                   </div>
-                  <span className="text-lg font-medium group-hover:text-brand-300 transition-colors">+33 1 23 45 67 89</span>
-                </div>
-                <div className="flex items-center group cursor-pointer">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mr-4 group-hover:bg-brand-500 transition-colors">
-                     <Mail className="h-5 w-5 text-white" aria-hidden="true" />
-                  </div>
-                  <span className="text-lg font-medium group-hover:text-brand-300 transition-colors">contact@webaforce.com</span>
+                  <span className="text-lg font-black uppercase">09 39 03 05 64</span>
                 </div>
                 <div className="flex items-center group">
-                   <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mr-4">
-                     <MapPin className="h-5 w-5 text-white" aria-hidden="true" />
+                   <div className="h-10 w-10 rounded-full bg-accent-600 flex items-center justify-center mr-4">
+                     <Search className="h-5 w-5 text-white" />
                    </div>
-                  <span className="text-lg font-medium">Paris, France</span>
+                  <span className="text-lg font-bold">Audit offert sous 24h</span>
                 </div>
               </div>
             </div>
             
             <div className="relative z-10 mt-12">
-              <p className="text-sm text-brand-200 opacity-60">
-                © {currentYear} WEBAFORCE. Innovation Française.
+              <p className="text-sm text-slate-400">
+                © {currentYear} WEBAFORCE. Domination Locale Garantie.
               </p>
             </div>
           </div>
 
-          {/* Form Section */}
-          <div className="lg:w-7/12 p-10 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm transition-colors duration-300">
+          <div className="lg:w-7/12 p-10 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm">
             <div className="mb-8">
-                <h4 className="text-xl font-bold text-slate-900 dark:text-white transition-colors">Demande de Consultation</h4>
-                <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 transition-colors">Remplissez ce formulaire pour obtenir un audit gratuit de votre situation.</p>
+                <h4 className="text-xl font-black text-slate-900 dark:text-white uppercase">Lancez votre audit gratuit</h4>
+                <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 uppercase font-bold tracking-tighter">Analysez votre visibilité locale dès maintenant.</p>
             </div>
 
             {isSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center p-6 bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-500/30 rounded-lg animate-pulse-slow">
-                <CheckCircle className="h-16 w-16 text-green-500 dark:text-green-400 mb-4" />
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Demande Envoyée !</h3>
-                <p className="text-slate-600 dark:text-slate-300">Un expert WEBAFORCE vous recontactera sous 24h.</p>
+              <div className="h-full flex flex-col items-center justify-center text-center p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-500/30 rounded-lg">
+                <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2 uppercase">Demande Reçue !</h3>
+                <p className="text-slate-600 dark:text-slate-300">Nous préparons votre audit. Un expert vous contactera d'ici demain.</p>
               </div>
             ) : (
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors">
-                      Nom complet
-                      </label>
-                      <input
-                      type="text"
-                      id="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="block w-full bg-white dark:bg-slate-900/50 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
-                      placeholder="Jean Dupont"
-                      />
+                      <label htmlFor="name" className="block text-xs font-black text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-widest">Nom complet</label>
+                      <input type="text" id="name" required value={formData.name} onChange={handleChange} className="block w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4" placeholder="Jean Dupont" />
                   </div>
                   <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors">
-                      Téléphone
-                      </label>
-                      <input
-                      type="tel"
-                      id="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className={`block w-full bg-white dark:bg-slate-900/50 border rounded-lg shadow-sm py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all ${errors.phone ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 dark:border-slate-600'}`}
-                      placeholder="06 12 34 56 78"
-                      />
-                      {errors.phone && (
-                        <div className="flex items-center mt-1 text-red-500 dark:text-red-400 text-xs">
-                          <AlertCircle className="w-3 h-3 mr-1" />
-                          {errors.phone}
-                        </div>
-                      )}
+                      <label htmlFor="company" className="block text-xs font-black text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-widest">Nom entreprise</label>
+                      <input type="text" id="company" required value={formData.company} onChange={handleChange} className="block w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4" placeholder="Toiture Pro 75" />
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors">
-                    Email professionnel
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`block w-full bg-white dark:bg-slate-900/50 border rounded-lg shadow-sm py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all ${errors.email ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 dark:border-slate-600'}`}
-                    placeholder="jean@entreprise.com"
-                  />
-                  {errors.email && (
-                    <div className="flex items-center mt-1 text-red-500 dark:text-red-400 text-xs">
-                      <AlertCircle className="w-3 h-3 mr-1" />
-                      {errors.email}
-                    </div>
-                  )}
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors">
-                    Votre objectif principal
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="block w-full bg-white dark:bg-slate-900/50 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm py-3 px-4 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all resize-none"
-                    placeholder="Je souhaite automatiser ma prise de rendez-vous et augmenter mon taux de conversion..."
-                  ></textarea>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                      <label htmlFor="phone" className="block text-xs font-black text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-widest">Téléphone</label>
+                      <input type="tel" id="phone" required value={formData.phone} onChange={handleChange} className="block w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4" placeholder="06 12 34 56 78" />
+                  </div>
+                  <div>
+                      <label htmlFor="email" className="block text-xs font-black text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-widest">Email</label>
+                      <input type="email" id="email" required value={formData.email} onChange={handleChange} className="block w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4" placeholder="jean@toiturepro.fr" />
+                  </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center py-4 px-4 border border-transparent rounded-lg shadow-lg text-base font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-800 focus:ring-brand-500 transition-all transform hover:scale-[1.01]"
-                >
-                  Valider ma demande
+                <div className="flex items-center gap-3 p-4 bg-accent-600/5 rounded-lg border border-accent-600/20">
+                    <input type="checkbox" id="auditRequested" checked={formData.auditRequested} onChange={handleChange} className="h-5 w-5 accent-accent-600" />
+                    <label htmlFor="auditRequested" className="text-sm font-black text-slate-800 dark:text-slate-200 uppercase tracking-tight">Je souhaite recevoir mon audit Google Maps gratuit</label>
+                </div>
+
+                <button type="submit" className="w-full flex items-center justify-center py-4 px-4 rounded-lg shadow-lg text-base font-black text-white bg-accent-600 hover:bg-accent-700 transition-all uppercase tracking-widest">
+                  Envoyer ma demande
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
-                <p className="text-xs text-center text-slate-500 dark:text-slate-400 mt-4 transition-colors">
-                  Vos données sont sécurisées. Nous vous répondrons sous 24h.
-                </p>
               </form>
             )}
           </div>
